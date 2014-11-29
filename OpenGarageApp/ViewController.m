@@ -12,6 +12,7 @@
 
 @interface ViewController () <SettingsViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UIButton *toggleButton;
 @property (nonatomic) GarageController *garageController;
 
 @end
@@ -35,6 +36,9 @@
 }
 
 - (IBAction)toggleButtonPushed:(id)sender {
+    _toggleButton.enabled = NO;
+    
+    
     [self.garageController toggleWithResultBlock:^(BOOL success) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Garage Door", @"Garage Door Open Dialog") message:@"" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
@@ -49,6 +53,7 @@
         }
         
         [self presentViewController:alert animated:YES completion:nil];
+        _toggleButton.enabled = YES;
     }];
 }
 

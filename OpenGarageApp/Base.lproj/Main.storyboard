@@ -49,6 +49,9 @@
                             <constraint firstAttribute="centerX" secondItem="fU2-2w-ryS" secondAttribute="centerX" id="up6-9Q-xPq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="toggleButton" destination="fU2-2w-ryS" id="Zvp-2x-6wU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
