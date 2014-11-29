@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class SettingsViewController;
+
+@protocol SettingsViewControllerDelegate
+
+- (void)settingsViewControllerDidFinish:(SettingsViewController *)controller withToken:(NSString *)token;
+
+@end
+
 @interface SettingsViewController : UIViewController
+
+@property (weak, nonatomic) id<SettingsViewControllerDelegate> delegate;
+@property (nonatomic) NSString *token;
 
 @end

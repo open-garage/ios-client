@@ -18,7 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    _tokenTextField.text = _token;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,7 +37,9 @@
 }
 */
 - (IBAction)saveButtonPushed:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    NSString *newToken = _tokenTextField.text;
+    
+    [_delegate settingsViewControllerDidFinish:self withToken:newToken];
 }
 
 @end

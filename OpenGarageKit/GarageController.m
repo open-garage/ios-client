@@ -19,6 +19,23 @@
 
 @implementation GarageController
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self loadToken];
+    }
+    return self;
+}
+
+- (void)loadToken {
+    _token = @"A";
+}
+
+- (void)saveToken:(NSString *)token {
+    _token = token;
+}
+
 - (void)toggleWithResultBlock:(void (^)(BOOL success))resultBlock {
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:configuration];

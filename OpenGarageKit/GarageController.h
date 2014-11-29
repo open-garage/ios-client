@@ -10,6 +10,9 @@
 
 @interface GarageController : NSObject
 
+@property (nonatomic) NSString *token;
+
+- (void)saveToken:(NSString *)token;
 - (void)toggleWithResultBlock:(void (^)(BOOL success))resultBlock;
 
 @end

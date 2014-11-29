@@ -37,7 +37,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="B6T-AF-Cjh" kind="show" id="XTp-ZT-wbW"/>
+                                    <segue destination="B6T-AF-Cjh" kind="show" identifier="showSettings" id="XTp-ZT-wbW"/>
                                 </connections>
                             </button>
                         </subviews>

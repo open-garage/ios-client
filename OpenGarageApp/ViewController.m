@@ -6,10 +6,11 @@
 //  Copyright (c) 2014 Patrick Steiner. All rights reserved.
 //
 
-#import "ViewController.h"
 #import <OpenGarageKit/OpenGarageKit.h>
+#import "ViewController.h"
+#import "SettingsViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <SettingsViewControllerDelegate>
 
 @property (nonatomic) GarageController *garageController;
 
@@ -49,6 +50,23 @@
         
         [self presentViewController:alert animated:YES completion:nil];
     }];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showSettings"]) {
+        SettingsViewController *settingsViewController = segue.destinationViewController;
+        settingsViewController.delegate = self;
+        settingsViewController.token = self.garageController.token;
+    }
+}
+
+#pragma mark - SettingsViewController Delegates
+
+- (void)settingsViewControllerDidFinish:(SettingsViewController *)controller withToken:(NSString *)token {
+    NSLog(@"DBG: token: %@", token);
+    
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
