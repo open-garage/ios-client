@@ -12,6 +12,8 @@
 
 @interface TodayViewController () <NCWidgetProviding>
 
+@property (nonatomic) GarageController *garageController;
+
 @end
 
 @implementation TodayViewController
@@ -36,8 +38,34 @@
     completionHandler(NCUpdateResultNewData);
 }
 
+- (GarageController *)garageController {
+    if (_garageController == nil) {
+        _garageController = [[GarageController alloc] init];
+    }
+    
+    return _garageController;
+}
+
 - (IBAction)toggleButtonPushed:(id)sender {
     NSLog(@"DBG: Extension button pushed");
+    
+    
+    //TODO: Feature is not available in exentsions of type com.apple.widget-extension
+    [self.garageController toggleWithResultBlock:^(BOOL success) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Garage Door", @"Garage Door Open Dialog") message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        
+        [alert addAction:okButton];
+        
+        if (success) {
+            alert.message = NSLocalizedString(@"Successfully toggled garage door", @"Garage door successfully opened dialog");
+            
+        } else {
+            alert.message = NSLocalizedString(@"Error while toggling garage door", @"Error while toggling garage door dialog");
+        }
+        
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
 }
 
 @end

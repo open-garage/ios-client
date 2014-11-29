@@ -26,6 +26,7 @@
 		CDD13F4D1A29EBE600767BE7 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD13F4C1A29EBE600767BE7 /* TodayViewController.m */; };
 		CDD13F4F1A29EBE600767BE7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD13F4E1A29EBE600767BE7 /* MainInterface.storyboard */; };
 		CDD13F521A29EBE600767BE7 /* OpenGarageTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CDD13F451A29EBE600767BE7 /* OpenGarageTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CDE34F991A2A319500FE017A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE34F981A2A319500FE017A /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,8 @@
 		CDD13F4C1A29EBE600767BE7 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		CDD13F4E1A29EBE600767BE7 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		CDD13F581A29EFC500767BE7 /* OpenGarageApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = OpenGarageApp.entitlements; sourceTree = "<group>"; };
+		CDE34F971A2A319500FE017A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		CDE34F981A2A319500FE017A /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +237,8 @@
 				CDA20AFA1A29E663000D2CBB /* AppDelegate.m */,
 				CDA20AFC1A29E663000D2CBB /* ViewController.h */,
 				CDA20AFD1A29E663000D2CBB /* ViewController.m */,
+				CDE34F971A2A319500FE017A /* SettingsViewController.h */,
+				CDE34F981A2A319500FE017A /* SettingsViewController.m */,
 				CDA20AFF1A29E663000D2CBB /* Main.storyboard */,
 				CDA20B021A29E663000D2CBB /* Images.xcassets */,
 				CDA20B041A29E663000D2CBB /* LaunchScreen.xib */,
@@ -556,6 +561,7 @@
 				CDA20AFE1A29E663000D2CBB /* ViewController.m in Sources */,
 				CDA20AFB1A29E663000D2CBB /* AppDelegate.m in Sources */,
 				CDA20AF81A29E663000D2CBB /* main.m in Sources */,
+				CDE34F991A2A319500FE017A /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
