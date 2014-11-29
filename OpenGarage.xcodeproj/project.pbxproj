@@ -1,0 +1,750 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8291E4FB06626541911A249B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2005044E9F363AFCCD7291 /* libPods.a */; };
+		CDA20AD31A29E433000D2CBB /* OpenGarageKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA20AD21A29E433000D2CBB /* OpenGarageKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDA20AD91A29E433000D2CBB /* OpenGarageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */; };
+		CDA20AE01A29E433000D2CBB /* OpenGarageKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA20ADF1A29E433000D2CBB /* OpenGarageKitTests.m */; };
+		CDA20AEB1A29E4BA000D2CBB /* GarageController.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA20AE91A29E4BA000D2CBB /* GarageController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDA20AEC1A29E4BA000D2CBB /* GarageController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA20AEA1A29E4BA000D2CBB /* GarageController.m */; };
+		CDA20AEE1A29E627000D2CBB /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = CDA20AED1A29E627000D2CBB /* server.cer */; };
+		CDA20AF81A29E663000D2CBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA20AF71A29E663000D2CBB /* main.m */; };
+		CDA20AFB1A29E663000D2CBB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA20AFA1A29E663000D2CBB /* AppDelegate.m */; };
+		CDA20AFE1A29E663000D2CBB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA20AFD1A29E663000D2CBB /* ViewController.m */; };
+		CDA20B011A29E663000D2CBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA20AFF1A29E663000D2CBB /* Main.storyboard */; };
+		CDA20B031A29E663000D2CBB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA20B021A29E663000D2CBB /* Images.xcassets */; };
+		CDA20B061A29E663000D2CBB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDA20B041A29E663000D2CBB /* LaunchScreen.xib */; };
+		CDA20B121A29E663000D2CBB /* OpenGarageAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA20B111A29E663000D2CBB /* OpenGarageAppTests.m */; };
+		CDA20B191A29E678000D2CBB /* OpenGarageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CDA20ADA1A29E433000D2CBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDA20AC41A29E433000D2CBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDA20ACC1A29E433000D2CBB;
+			remoteInfo = OpenGarageKit;
+		};
+		CDA20B0C1A29E663000D2CBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDA20AC41A29E433000D2CBB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDA20AF21A29E663000D2CBB;
+			remoteInfo = OpenGarageApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		209E0645CB3F63D15DF93CF5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		2F2005044E9F363AFCCD7291 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CE789273F94E7B2696838F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenGarageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA20AD11A29E433000D2CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDA20AD21A29E433000D2CBB /* OpenGarageKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGarageKit.h; sourceTree = "<group>"; };
+		CDA20AD81A29E433000D2CBB /* OpenGarageKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenGarageKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA20ADE1A29E433000D2CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDA20ADF1A29E433000D2CBB /* OpenGarageKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGarageKitTests.m; sourceTree = "<group>"; };
+		CDA20AE91A29E4BA000D2CBB /* GarageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GarageController.h; sourceTree = "<group>"; };
+		CDA20AEA1A29E4BA000D2CBB /* GarageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GarageController.m; sourceTree = "<group>"; };
+		CDA20AED1A29E627000D2CBB /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.cer; sourceTree = "<group>"; };
+		CDA20AF31A29E663000D2CBB /* OpenGarageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGarageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA20AF61A29E663000D2CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDA20AF71A29E663000D2CBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CDA20AF91A29E663000D2CBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CDA20AFA1A29E663000D2CBB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CDA20AFC1A29E663000D2CBB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CDA20AFD1A29E663000D2CBB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CDA20B001A29E663000D2CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CDA20B021A29E663000D2CBB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CDA20B051A29E663000D2CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		CDA20B0B1A29E663000D2CBB /* OpenGarageAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenGarageAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA20B101A29E663000D2CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDA20B111A29E663000D2CBB /* OpenGarageAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGarageAppTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CDA20AC91A29E433000D2CBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8291E4FB06626541911A249B /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA20AD51A29E433000D2CBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA20AD91A29E433000D2CBB /* OpenGarageKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA20AF01A29E663000D2CBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA20B191A29E678000D2CBB /* OpenGarageKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA20B081A29E663000D2CBB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		23CCBF0686713481C1817F3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F2005044E9F363AFCCD7291 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B73DF3F954419E372C508B8C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4CE789273F94E7B2696838F0 /* Pods.debug.xcconfig */,
+				209E0645CB3F63D15DF93CF5 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CDA20AC31A29E433000D2CBB = {
+			isa = PBXGroup;
+			children = (
+				CDA20ACF1A29E433000D2CBB /* OpenGarageKit */,
+				CDA20ADC1A29E433000D2CBB /* OpenGarageKitTests */,
+				CDA20AF41A29E663000D2CBB /* OpenGarageApp */,
+				CDA20B0E1A29E663000D2CBB /* OpenGarageAppTests */,
+				CDA20ACE1A29E433000D2CBB /* Products */,
+				B73DF3F954419E372C508B8C /* Pods */,
+				23CCBF0686713481C1817F3C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CDA20ACE1A29E433000D2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */,
+				CDA20AD81A29E433000D2CBB /* OpenGarageKitTests.xctest */,
+				CDA20AF31A29E663000D2CBB /* OpenGarageApp.app */,
+				CDA20B0B1A29E663000D2CBB /* OpenGarageAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDA20ACF1A29E433000D2CBB /* OpenGarageKit */ = {
+			isa = PBXGroup;
+			children = (
+				CDA20AE91A29E4BA000D2CBB /* GarageController.h */,
+				CDA20AEA1A29E4BA000D2CBB /* GarageController.m */,
+				CDA20AD21A29E433000D2CBB /* OpenGarageKit.h */,
+				CDA20AD01A29E433000D2CBB /* Supporting Files */,
+			);
+			path = OpenGarageKit;
+			sourceTree = "<group>";
+		};
+		CDA20AD01A29E433000D2CBB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDA20AED1A29E627000D2CBB /* server.cer */,
+				CDA20AD11A29E433000D2CBB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDA20ADC1A29E433000D2CBB /* OpenGarageKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				CDA20ADF1A29E433000D2CBB /* OpenGarageKitTests.m */,
+				CDA20ADD1A29E433000D2CBB /* Supporting Files */,
+			);
+			path = OpenGarageKitTests;
+			sourceTree = "<group>";
+		};
+		CDA20ADD1A29E433000D2CBB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDA20ADE1A29E433000D2CBB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDA20AF41A29E663000D2CBB /* OpenGarageApp */ = {
+			isa = PBXGroup;
+			children = (
+				CDA20AF91A29E663000D2CBB /* AppDelegate.h */,
+				CDA20AFA1A29E663000D2CBB /* AppDelegate.m */,
+				CDA20AFC1A29E663000D2CBB /* ViewController.h */,
+				CDA20AFD1A29E663000D2CBB /* ViewController.m */,
+				CDA20AFF1A29E663000D2CBB /* Main.storyboard */,
+				CDA20B021A29E663000D2CBB /* Images.xcassets */,
+				CDA20B041A29E663000D2CBB /* LaunchScreen.xib */,
+				CDA20AF51A29E663000D2CBB /* Supporting Files */,
+			);
+			path = OpenGarageApp;
+			sourceTree = "<group>";
+		};
+		CDA20AF51A29E663000D2CBB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDA20AF61A29E663000D2CBB /* Info.plist */,
+				CDA20AF71A29E663000D2CBB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDA20B0E1A29E663000D2CBB /* OpenGarageAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				CDA20B111A29E663000D2CBB /* OpenGarageAppTests.m */,
+				CDA20B0F1A29E663000D2CBB /* Supporting Files */,
+			);
+			path = OpenGarageAppTests;
+			sourceTree = "<group>";
+		};
+		CDA20B0F1A29E663000D2CBB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDA20B101A29E663000D2CBB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CDA20ACA1A29E433000D2CBB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA20AD31A29E433000D2CBB /* OpenGarageKit.h in Headers */,
+				CDA20AEB1A29E4BA000D2CBB /* GarageController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CDA20ACC1A29E433000D2CBB /* OpenGarageKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDA20AE31A29E433000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarageKit" */;
+			buildPhases = (
+				978150B6B67F39E43D644701 /* Check Pods Manifest.lock */,
+				CDA20AC81A29E433000D2CBB /* Sources */,
+				CDA20AC91A29E433000D2CBB /* Frameworks */,
+				CDA20ACA1A29E433000D2CBB /* Headers */,
+				CDA20ACB1A29E433000D2CBB /* Resources */,
+				4E069F1CFD5095803B7F8778 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenGarageKit;
+			productName = OpenGarageKit;
+			productReference = CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CDA20AD71A29E433000D2CBB /* OpenGarageKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDA20AE61A29E433000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarageKitTests" */;
+			buildPhases = (
+				CDA20AD41A29E433000D2CBB /* Sources */,
+				CDA20AD51A29E433000D2CBB /* Frameworks */,
+				CDA20AD61A29E433000D2CBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDA20ADB1A29E433000D2CBB /* PBXTargetDependency */,
+			);
+			name = OpenGarageKitTests;
+			productName = OpenGarageKitTests;
+			productReference = CDA20AD81A29E433000D2CBB /* OpenGarageKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CDA20AF21A29E663000D2CBB /* OpenGarageApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDA20B131A29E663000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarageApp" */;
+			buildPhases = (
+				CDA20AEF1A29E663000D2CBB /* Sources */,
+				CDA20AF01A29E663000D2CBB /* Frameworks */,
+				CDA20AF11A29E663000D2CBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenGarageApp;
+			productName = OpenGarageApp;
+			productReference = CDA20AF31A29E663000D2CBB /* OpenGarageApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CDA20B0A1A29E663000D2CBB /* OpenGarageAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDA20B161A29E663000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarageAppTests" */;
+			buildPhases = (
+				CDA20B071A29E663000D2CBB /* Sources */,
+				CDA20B081A29E663000D2CBB /* Frameworks */,
+				CDA20B091A29E663000D2CBB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDA20B0D1A29E663000D2CBB /* PBXTargetDependency */,
+			);
+			name = OpenGarageAppTests;
+			productName = OpenGarageAppTests;
+			productReference = CDA20B0B1A29E663000D2CBB /* OpenGarageAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CDA20AC41A29E433000D2CBB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Patrick Steiner";
+				TargetAttributes = {
+					CDA20ACC1A29E433000D2CBB = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					CDA20AD71A29E433000D2CBB = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					CDA20AF21A29E663000D2CBB = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					CDA20B0A1A29E663000D2CBB = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = CDA20AF21A29E663000D2CBB;
+					};
+				};
+			};
+			buildConfigurationList = CDA20AC71A29E433000D2CBB /* Build configuration list for PBXProject "OpenGarage" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CDA20AC31A29E433000D2CBB;
+			productRefGroup = CDA20ACE1A29E433000D2CBB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDA20ACC1A29E433000D2CBB /* OpenGarageKit */,
+				CDA20AD71A29E433000D2CBB /* OpenGarageKitTests */,
+				CDA20AF21A29E663000D2CBB /* OpenGarageApp */,
+				CDA20B0A1A29E663000D2CBB /* OpenGarageAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CDA20ACB1A29E433000D2CBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA20AEE1A29E627000D2CBB /* server.cer in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA20AD61A29E433000D2CBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA20AF11A29E663000D2CBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA20B011A29E663000D2CBB /* Main.storyboard in Resources */,
+				CDA20B061A29E663000D2CBB /* LaunchScreen.xib in Resources */,
+				CDA20B031A29E663000D2CBB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA20B091A29E663000D2CBB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E069F1CFD5095803B7F8778 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		978150B6B67F39E43D644701 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CDA20AC81A29E433000D2CBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA20AEC1A29E4BA000D2CBB /* GarageController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA20AD41A29E433000D2CBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA20AE01A29E433000D2CBB /* OpenGarageKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA20AEF1A29E663000D2CBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA20AFE1A29E663000D2CBB /* ViewController.m in Sources */,
+				CDA20AFB1A29E663000D2CBB /* AppDelegate.m in Sources */,
+				CDA20AF81A29E663000D2CBB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDA20B071A29E663000D2CBB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDA20B121A29E663000D2CBB /* OpenGarageAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CDA20ADB1A29E433000D2CBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDA20ACC1A29E433000D2CBB /* OpenGarageKit */;
+			targetProxy = CDA20ADA1A29E433000D2CBB /* PBXContainerItemProxy */;
+		};
+		CDA20B0D1A29E663000D2CBB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDA20AF21A29E663000D2CBB /* OpenGarageApp */;
+			targetProxy = CDA20B0C1A29E663000D2CBB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CDA20AFF1A29E663000D2CBB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDA20B001A29E663000D2CBB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CDA20B041A29E663000D2CBB /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDA20B051A29E663000D2CBB /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CDA20AE11A29E433000D2CBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CDA20AE21A29E433000D2CBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CDA20AE41A29E433000D2CBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CE789273F94E7B2696838F0 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = OpenGarageKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CDA20AE51A29E433000D2CBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 209E0645CB3F63D15DF93CF5 /* Pods.release.xcconfig */;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = OpenGarageKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CDA20AE71A29E433000D2CBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OpenGarageKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CDA20AE81A29E433000D2CBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OpenGarageKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CDA20B141A29E663000D2CBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OpenGarageApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CDA20B151A29E663000D2CBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OpenGarageApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CDA20B171A29E663000D2CBB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OpenGarageAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenGarageApp.app/OpenGarageApp";
+			};
+			name = Debug;
+		};
+		CDA20B181A29E663000D2CBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = OpenGarageAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenGarageApp.app/OpenGarageApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CDA20AC71A29E433000D2CBB /* Build configuration list for PBXProject "OpenGarage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDA20AE11A29E433000D2CBB /* Debug */,
+				CDA20AE21A29E433000D2CBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDA20AE31A29E433000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarageKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDA20AE41A29E433000D2CBB /* Debug */,
+				CDA20AE51A29E433000D2CBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDA20AE61A29E433000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarageKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDA20AE71A29E433000D2CBB /* Debug */,
+				CDA20AE81A29E433000D2CBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDA20B131A29E663000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarageApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDA20B141A29E663000D2CBB /* Debug */,
+				CDA20B151A29E663000D2CBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CDA20B161A29E663000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarageAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDA20B171A29E663000D2CBB /* Debug */,
+				CDA20B181A29E663000D2CBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CDA20AC41A29E433000D2CBB /* Project object */;
+}
