@@ -703,6 +703,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4CE789273F94E7B2696838F0 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -719,6 +720,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 209E0645CB3F63D15DF93CF5 /* Pods.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
