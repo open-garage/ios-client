@@ -10,7 +10,6 @@
 #import <AFNetworking.h>
 
 #define kSERVERURL @"https://192.168.0.165:8000/api/v1/toggle"
-#define kToken @"A"
 
 /**
  iOS Certificate Pinnig:
@@ -29,11 +28,18 @@
 }
 
 - (void)loadToken {
-    _token = @"A";
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *token = [defaults objectForKey:@"token"];
+    
+    _token = token;
 }
 
 - (void)saveToken:(NSString *)token {
     _token = token;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    [defaults setObject:token forKey:@"token"];
 }
 
 - (void)toggleWithResultBlock:(void (^)(BOOL success))resultBlock {
@@ -43,7 +49,7 @@
     manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
     manager.securityPolicy.allowInvalidCertificates = YES;
     
-    NSDictionary *parameters = @{@"token": kToken};
+    NSDictionary *parameters = @{@"token": _token};
     NSURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:kSERVERURL parameters:parameters error:nil];
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {

@@ -62,10 +62,8 @@
 
 #pragma mark - SettingsViewController Delegates
 
-- (void)settingsViewControllerDidFinish:(SettingsViewController *)controller withToken:(NSString *)token {
-    NSLog(@"DBG: token: %@", token);
-    
-    
+- (void)settingsViewControllerDidFinish:(SettingsViewController *)controller withToken:(NSString *)token {    
+    [self.garageController saveToken:token];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
