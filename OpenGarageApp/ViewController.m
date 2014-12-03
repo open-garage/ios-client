@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *toggleButton;
 @property (nonatomic) GarageController *garageController;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *progressIndicator;
 
 @end
 
@@ -37,6 +38,7 @@
 
 - (IBAction)toggleButtonPushed:(id)sender {
     _toggleButton.enabled = NO;
+    [_progressIndicator startAnimating];
     
     
     [self.garageController toggleWithResultBlock:^(BOOL success) {
@@ -53,7 +55,9 @@
         }
         
         [self presentViewController:alert animated:YES completion:nil];
+        
         _toggleButton.enabled = YES;
+        [_progressIndicator stopAnimating];
     }];
 }
 
