@@ -12,7 +12,7 @@
 
 @protocol SettingsViewControllerDelegate
 
-- (void)settingsViewControllerDidFinish:(SettingsViewController *)controller withToken:(NSString *)token;
+- (void)settingsViewControllerDidFinish:(SettingsViewController *)controller withToken:(NSString *)token andURL:(NSString *)url;
 
 @end
 
@@ -20,5 +20,6 @@
 
 @property (weak, nonatomic) id<SettingsViewControllerDelegate> delegate;
 @property (nonatomic) NSString *token;
+@property (nonatomic) NSString *serverUrl;
 
 @end

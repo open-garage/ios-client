@@ -11,8 +11,10 @@
 @interface GarageController : NSObject
 
 @property (nonatomic) NSString *token;
+@property (nonatomic) NSString *serverUrl;
 
 - (void)saveToken:(NSString *)token;
+- (void)saveServerURL:(NSString *)url;
 - (void)toggleWithResultBlock:(void (^)(BOOL success))resultBlock;
 
 @end

@@ -11,6 +11,7 @@
 @interface SettingsViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *tokenTextField;
+@property (weak, nonatomic) IBOutlet UITextField *serverUrlTextField;
 
 @end
 
@@ -20,6 +21,7 @@
     [super viewDidLoad];
     
     _tokenTextField.text = _token;
+    _serverUrlTextField.text = _serverUrl;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,19 +29,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (IBAction)saveButtonPushed:(id)sender {
-    NSString *newToken = _tokenTextField.text;
+    _token = _tokenTextField.text;
+    _serverUrl = _serverUrlTextField.text;
     
-    [_delegate settingsViewControllerDidFinish:self withToken:newToken];
+    if ([self checkinput]) {
+        [_delegate settingsViewControllerDidFinish:self withToken:_token andURL:_serverUrl];
+    }
+}
+- (IBAction)cancelButtonPushed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (BOOL)checkinput {
+    // check if strings are empty
+    if ([_token length] < 1 || [_serverUrl length] < 1) {
+        return false;
+    }
+    
+    return true;
 }
 
 @end

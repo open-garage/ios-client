@@ -9,7 +9,12 @@
 #import "GarageController.h"
 #import <AFNetworking.h>
 
-#define kSERVERURL @"https://192.168.0.165:8000/api/v1/toggle"
+
+
+#define kToken @"token"
+#define kServerURL @"serverurl"
+
+// https://192.168.0.165:8000/api/v1/toggle
 
 /**
  iOS Certificate Pinnig:
@@ -22,14 +27,19 @@
 {
     self = [super init];
     if (self) {
-        [self loadToken];
+        [self loadStoredData];
     }
     return self;
 }
 
+- (void)loadStoredData {
+    [self loadServerURL];
+    [self loadToken];
+}
+
 - (void)loadToken {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *token = [defaults objectForKey:@"token"];
+    NSString *token = [defaults objectForKey:kToken];
     
     _token = token;
 }
@@ -38,8 +48,21 @@
     _token = token;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:token forKey:kToken];
+}
+
+- (void)loadServerURL {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *url = [defaults objectForKey:kServerURL];
     
-    [defaults setObject:token forKey:@"token"];
+    _serverUrl = url;
+}
+
+- (void)saveServerURL:(NSString *)url {
+    _serverUrl = url;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:url forKey:kServerURL];
 }
 
 - (void)toggleWithResultBlock:(void (^)(BOOL success))resultBlock {
@@ -50,7 +73,7 @@
     manager.securityPolicy.allowInvalidCertificates = YES;
     
     NSDictionary *parameters = @{@"token": _token};
-    NSURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:kSERVERURL parameters:parameters error:nil];
+    NSURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:_serverUrl parameters:parameters error:nil];
     
     NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
         if (error) {

@@ -63,16 +63,20 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showSettings"]) {
-        SettingsViewController *settingsViewController = segue.destinationViewController;
+        UINavigationController *navigationController = segue.destinationViewController;
+        SettingsViewController *settingsViewController = navigationController.viewControllers[0];
         settingsViewController.delegate = self;
         settingsViewController.token = self.garageController.token;
+        settingsViewController.serverUrl = self.garageController.serverUrl;
     }
 }
 
 #pragma mark - SettingsViewController Delegates
 
-- (void)settingsViewControllerDidFinish:(SettingsViewController *)controller withToken:(NSString *)token {    
+- (void)settingsViewControllerDidFinish:(SettingsViewController *)controller withToken:(NSString *)token andURL:(NSString *)url {
     [self.garageController saveToken:token];
+    [self.garageController saveServerURL:url];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
