@@ -10,11 +10,13 @@
 #import <NotificationCenter/NotificationCenter.h>
 #import <OpenGarageKit/OpenGarageKit.h>
 
+// enable for AFNetworking
 #define AF_APP_EXTENSIONS
 
 @interface TodayViewController () <NCWidgetProviding>
 
 @property (nonatomic) GarageController *garageController;
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
 
 @end
 
@@ -22,12 +24,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    _infoLabel.text = @"";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
@@ -49,14 +50,11 @@
 }
 
 - (IBAction)toggleButtonPushed:(id)sender {
-    NSLog(@"DBG: Extension button pushed");
-    
     [self.garageController toggleWithResultBlock:^(BOOL success) {
         if (success) {
-            NSLog(@"DBG: OK :)");
-            
+            _infoLabel.text = @"OK :)";
         } else {
-            NSLog(@"DBG: ERROR :(");
+            _infoLabel.text = @"ERROR :(";
         }
     }];
 }

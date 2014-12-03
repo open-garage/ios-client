@@ -14,15 +14,16 @@
                         <viewControllerLayoutGuide type="bottom" id="RK8-qQ-Y2k"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4n-Hc-WEC">
-                                <rect key="frame" x="137" y="4" width="46" height="143"/>
+                                <rect key="frame" x="16" y="-22" width="71" height="143"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="143" id="8gW-ku-aCn"/>
-                                    <constraint firstAttribute="width" constant="46" id="P0r-N4-NaV"/>
+                                    <constraint firstAttribute="height" constant="143" id="2Mn-If-mez"/>
+                                    <constraint firstAttribute="width" constant="71" id="SR8-AY-mGY"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Toggle">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -30,13 +31,22 @@
                                     <action selector="toggleButtonPushed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="2vY-RM-68u"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Od-uf-R7h">
+                                <rect key="frame" x="90" y="40" width="209" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="209" id="Yx8-iG-Tu5"/>
+                                    <constraint firstAttribute="height" constant="21" id="ahT-Hd-iwS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Z4n-Hc-WEC" firstAttribute="top" secondItem="A6A-s3-AbG" secondAttribute="bottom" constant="4" id="3b6-LX-fCL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Z4n-Hc-WEC" secondAttribute="trailing" constant="121" id="4YO-3o-3hE"/>
-                            <constraint firstItem="Z4n-Hc-WEC" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="121" id="Lrg-eY-3d0"/>
-                            <constraint firstItem="RK8-qQ-Y2k" firstAttribute="top" secondItem="Z4n-Hc-WEC" secondAttribute="bottom" constant="3" id="SHf-vW-8G9"/>
+                            <constraint firstItem="5Od-uf-R7h" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" constant="-5" id="262-iZ-eKa"/>
+                            <constraint firstAttribute="centerY" secondItem="Z4n-Hc-WEC" secondAttribute="centerY" id="T4Z-kk-4pe"/>
+                            <constraint firstItem="Z4n-Hc-WEC" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="hgg-V3-Ofo"/>
+                            <constraint firstAttribute="centerY" secondItem="5Od-uf-R7h" secondAttribute="centerY" id="lg7-Bh-6Og"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -44,7 +54,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="150"/>
+                    <size key="freeformSize" width="320" height="100"/>
+                    <connections>
+                        <outlet property="infoLabel" destination="5Od-uf-R7h" id="tBY-jL-zPo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
