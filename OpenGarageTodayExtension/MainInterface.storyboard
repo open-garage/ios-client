@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,20 +19,24 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4n-Hc-WEC">
                                 <rect key="frame" x="137" y="4" width="46" height="143"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="143" id="8gW-ku-aCn"/>
+                                    <constraint firstAttribute="width" constant="46" id="P0r-N4-NaV"/>
+                                </constraints>
                                 <state key="normal" title="Toggle">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="toggleButtonPushed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="AFH-BD-Onx"/>
+                                    <action selector="toggleButtonPushed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="2vY-RM-68u"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Z4n-Hc-WEC" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="121" id="6AJ-bI-gDD"/>
-                            <constraint firstItem="RK8-qQ-Y2k" firstAttribute="top" secondItem="Z4n-Hc-WEC" secondAttribute="bottom" constant="3" id="9C5-he-Ktq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Z4n-Hc-WEC" secondAttribute="trailing" constant="121" id="NQL-T5-HhZ"/>
-                            <constraint firstItem="Z4n-Hc-WEC" firstAttribute="top" secondItem="A6A-s3-AbG" secondAttribute="bottom" constant="4" id="XjP-Vx-Rk4"/>
+                            <constraint firstItem="Z4n-Hc-WEC" firstAttribute="top" secondItem="A6A-s3-AbG" secondAttribute="bottom" constant="4" id="3b6-LX-fCL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z4n-Hc-WEC" secondAttribute="trailing" constant="121" id="4YO-3o-3hE"/>
+                            <constraint firstItem="Z4n-Hc-WEC" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="121" id="Lrg-eY-3d0"/>
+                            <constraint firstItem="RK8-qQ-Y2k" firstAttribute="top" secondItem="Z4n-Hc-WEC" secondAttribute="bottom" constant="3" id="SHf-vW-8G9"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>

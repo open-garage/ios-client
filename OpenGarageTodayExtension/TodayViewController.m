@@ -10,6 +10,8 @@
 #import <NotificationCenter/NotificationCenter.h>
 #import <OpenGarageKit/OpenGarageKit.h>
 
+#define AF_APP_EXTENSIONS
+
 @interface TodayViewController () <NCWidgetProviding>
 
 @property (nonatomic) GarageController *garageController;
@@ -49,22 +51,13 @@
 - (IBAction)toggleButtonPushed:(id)sender {
     NSLog(@"DBG: Extension button pushed");
     
-    
-    //TODO: Feature is not available in exentsions of type com.apple.widget-extension
     [self.garageController toggleWithResultBlock:^(BOOL success) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Garage Door", @"Garage Door Open Dialog") message:@"" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-        
-        [alert addAction:okButton];
-        
         if (success) {
-            alert.message = NSLocalizedString(@"Successfully toggled garage door", @"Garage door successfully opened dialog");
+            NSLog(@"DBG: OK :)");
             
         } else {
-            alert.message = NSLocalizedString(@"Error while toggling garage door", @"Error while toggling garage door dialog");
+            NSLog(@"DBG: ERROR :(");
         }
-        
-        [self presentViewController:alert animated:YES completion:nil];
     }];
 }
 

@@ -38,7 +38,7 @@
 }
 
 - (void)loadToken {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
     NSString *token = [defaults objectForKey:kToken];
     
     _token = token;
@@ -47,12 +47,12 @@
 - (void)saveToken:(NSString *)token {
     _token = token;
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
     [defaults setObject:token forKey:kToken];
 }
 
 - (void)loadServerURL {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
     NSString *url = [defaults objectForKey:kServerURL];
     
     _serverUrl = url;
@@ -61,43 +61,48 @@
 - (void)saveServerURL:(NSString *)url {
     _serverUrl = url;
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
     [defaults setObject:url forKey:kServerURL];
 }
 
 - (void)toggleWithResultBlock:(void (^)(BOOL success))resultBlock {
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:configuration];
-    
-    manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
-    manager.securityPolicy.allowInvalidCertificates = YES;
-    
-    NSDictionary *parameters = @{@"token": _token};
-    NSURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:_serverUrl parameters:parameters error:nil];
-    
-    NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-        if (error) {
-            NSLog(@"ERROR: %@", error);
-            resultBlock(false);
-        } else {
-            NSHTTPURLResponse *resp = (NSHTTPURLResponse*)response;
-            
-            if (resp.statusCode == 200) {
-                NSString *errorString = [responseObject[@"error"] stringValue];
-                if ([errorString isEqualToString:@"0"]) {
-                    resultBlock(true);
+    if ([_serverUrl length] > 0 && [_token length] > 0) {
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:configuration];
+        
+        manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+        manager.securityPolicy.allowInvalidCertificates = YES;
+        
+        NSDictionary *parameters = @{@"token": _token};
+        NSURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:_serverUrl parameters:parameters error:nil];
+        
+        NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+            if (error) {
+                NSLog(@"ERROR: %@", error);
+                resultBlock(false);
+            } else {
+                NSHTTPURLResponse *resp = (NSHTTPURLResponse*)response;
+                
+                if (resp.statusCode == 200) {
+                    NSString *errorString = [responseObject[@"error"] stringValue];
+                    if ([errorString isEqualToString:@"0"]) {
+                        resultBlock(true);
+                    } else {
+                        NSLog(@"ERROR: code: %@", errorString);
+                        resultBlock(false);
+                    }
                 } else {
-                    NSLog(@"ERROR: code: %@", errorString);
+                    NSLog(@"ERROR: %@ %@", response, responseObject);
                     resultBlock(false);
                 }
-            } else {
-                NSLog(@"ERROR: %@ %@", response, responseObject);
-                resultBlock(false);
             }
-        }
-    }];
-    
-    [dataTask resume];
+        }];
+        
+        [dataTask resume];
+    } else {
+        NSLog(@"ERROR: serverurl or authentication token empty");
+        resultBlock(false);
+    }
 }
 
 @end
