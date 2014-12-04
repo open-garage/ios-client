@@ -49,6 +49,7 @@
     
     NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
     [defaults setObject:token forKey:kToken];
+    [defaults synchronize];
 }
 
 - (void)loadServerURL {
@@ -63,6 +64,7 @@
     
     NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
     [defaults setObject:url forKey:kServerURL];
+    [defaults synchronize];
 }
 
 - (void)toggleWithResultBlock:(void (^)(BOOL success))resultBlock {
