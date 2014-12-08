@@ -89,11 +89,11 @@
                 NSHTTPURLResponse *resp = (NSHTTPURLResponse*)response;
                 
                 if (resp.statusCode == 200) {
-                    NSString *errorString = [responseObject[@"error"] stringValue];
+                    NSString *errorString = [responseObject[@"status"] stringValue];
                     if ([errorString isEqualToString:@"0"]) {
                         resultBlock(true);
                     } else {
-                        NSLog(@"ERROR: code: %@", errorString);
+                        NSLog(@"Status code: %@", errorString);
                         resultBlock(false);
                     }
                 } else {
