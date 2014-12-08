@@ -14,11 +14,12 @@
 #define kToken @"token"
 #define kServerURL @"serverurl"
 
-// https://192.168.0.165:8000/api/v1/toggle
-
 /**
  iOS Certificate Pinnig:
  http://initwithfunk.com/blog/2014/03/12/afnetworking-ssl-pinning-with-self-signed-certificates/#fnref:1
+ 
+ Convert crt to cer
+ openssl x509 -in server.crt -outform der -out server.cer
  */
 
 @implementation GarageController
@@ -74,6 +75,8 @@
         
         manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
         manager.securityPolicy.allowInvalidCertificates = YES;
+        
+        NSLog(@"DBG: ServerURL: %@ - Token: %@", _serverUrl, _token);
         
         NSDictionary *parameters = @{@"token": _token};
         NSURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:_serverUrl parameters:parameters error:nil];
