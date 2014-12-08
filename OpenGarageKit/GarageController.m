@@ -9,8 +9,6 @@
 #import "GarageController.h"
 #import <AFNetworking.h>
 
-
-
 #define kToken @"token"
 #define kServerURL @"serverurl"
 
@@ -68,7 +66,7 @@
     [defaults synchronize];
 }
 
-- (void)toggleWithResultBlock:(void (^)(BOOL success))resultBlock {
+- (void)apiCall:(NSString*)call WithResultBlock:(void (^)(BOOL success))resultBlock {
     if ([_serverUrl length] > 0 && [_token length] > 0) {
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:configuration];
@@ -76,10 +74,11 @@
         manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
         manager.securityPolicy.allowInvalidCertificates = YES;
         
-        NSLog(@"DBG: ServerURL: %@ - Token: %@", _serverUrl, _token);
+        NSString *url = [NSString stringWithFormat:@"%@/api/v1/%@", _serverUrl, call];
+        //NSLog(@"DBG: URL: %@ - Token: %@", url, _token);
         
         NSDictionary *parameters = @{@"token": _token};
-        NSURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:_serverUrl parameters:parameters error:nil];
+        NSURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:url parameters:parameters error:nil];
         
         NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
             if (error) {
@@ -108,6 +107,18 @@
         NSLog(@"ERROR: serverurl or authentication token empty");
         resultBlock(false);
     }
+}
+
+- (void)toggleWithResultBlock:(void (^)(BOOL success))resultBlock {
+    [self apiCall:@"toggle" WithResultBlock:^(BOOL success) {
+        resultBlock(success);
+    }];
+}
+
+- (void)statusWithResultBlock:(void (^)(BOOL success))resultBlock {
+    [self apiCall:@"status" WithResultBlock:^(BOOL success) {
+        resultBlock(success);
+    }];
 }
 
 @end
