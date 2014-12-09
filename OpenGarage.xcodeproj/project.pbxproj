@@ -12,8 +12,6 @@
 		CD8EA26A1A37931C0024D859 /* GarageKey.h in Headers */ = {isa = PBXBuildFile; fileRef = CD8EA2681A37931C0024D859 /* GarageKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD8EA26B1A37931C0024D859 /* GarageKey.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8EA2691A37931C0024D859 /* GarageKey.m */; };
 		CDA20AD31A29E433000D2CBB /* OpenGarageKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA20AD21A29E433000D2CBB /* OpenGarageKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CDA20AD91A29E433000D2CBB /* OpenGarageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */; };
-		CDA20AE01A29E433000D2CBB /* OpenGarageKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA20ADF1A29E433000D2CBB /* OpenGarageKitTests.m */; };
 		CDA20AEB1A29E4BA000D2CBB /* GarageController.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA20AE91A29E4BA000D2CBB /* GarageController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDA20AEC1A29E4BA000D2CBB /* GarageController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA20AEA1A29E4BA000D2CBB /* GarageController.m */; };
 		CDA20AEE1A29E627000D2CBB /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = CDA20AED1A29E627000D2CBB /* server.cer */; };
@@ -22,7 +20,6 @@
 		CDA20AFE1A29E663000D2CBB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA20AFD1A29E663000D2CBB /* ViewController.m */; };
 		CDA20B011A29E663000D2CBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA20AFF1A29E663000D2CBB /* Main.storyboard */; };
 		CDA20B061A29E663000D2CBB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDA20B041A29E663000D2CBB /* LaunchScreen.xib */; };
-		CDA20B121A29E663000D2CBB /* OpenGarageAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA20B111A29E663000D2CBB /* OpenGarageAppTests.m */; };
 		CDA20B191A29E678000D2CBB /* OpenGarageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */; };
 		CDA28A331A308F4D00AC1D1C /* OpenGarageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */; };
 		CDA28A391A30921300AC1D1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA20B021A29E663000D2CBB /* Images.xcassets */; };
@@ -41,20 +38,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = CDA20ACC1A29E433000D2CBB;
 			remoteInfo = OpenGarageKit;
-		};
-		CDA20ADA1A29E433000D2CBB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CDA20AC41A29E433000D2CBB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CDA20ACC1A29E433000D2CBB;
-			remoteInfo = OpenGarageKit;
-		};
-		CDA20B0C1A29E663000D2CBB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CDA20AC41A29E433000D2CBB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CDA20AF21A29E663000D2CBB;
-			remoteInfo = OpenGarageApp;
 		};
 		CDD13F501A29EBE600767BE7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -99,13 +82,10 @@
 		CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenGarageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA20AD11A29E433000D2CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDA20AD21A29E433000D2CBB /* OpenGarageKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGarageKit.h; sourceTree = "<group>"; };
-		CDA20AD81A29E433000D2CBB /* OpenGarageKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenGarageKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDA20ADE1A29E433000D2CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CDA20ADF1A29E433000D2CBB /* OpenGarageKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGarageKitTests.m; sourceTree = "<group>"; };
 		CDA20AE91A29E4BA000D2CBB /* GarageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GarageController.h; sourceTree = "<group>"; };
 		CDA20AEA1A29E4BA000D2CBB /* GarageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GarageController.m; sourceTree = "<group>"; };
 		CDA20AED1A29E627000D2CBB /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.cer; sourceTree = "<group>"; };
-		CDA20AF31A29E663000D2CBB /* OpenGarageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGarageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA20AF31A29E663000D2CBB /* OpenGarage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGarage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA20AF61A29E663000D2CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDA20AF71A29E663000D2CBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CDA20AF91A29E663000D2CBB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -115,9 +95,6 @@
 		CDA20B001A29E663000D2CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CDA20B021A29E663000D2CBB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CDA20B051A29E663000D2CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		CDA20B0B1A29E663000D2CBB /* OpenGarageAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenGarageAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDA20B101A29E663000D2CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CDA20B111A29E663000D2CBB /* OpenGarageAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGarageAppTests.m; sourceTree = "<group>"; };
 		CDB276651A29F5710093E363 /* OpenGarageTodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = OpenGarageTodayExtension.entitlements; sourceTree = "<group>"; };
 		CDD13F451A29EBE600767BE7 /* OpenGarageTodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OpenGarageTodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD13F461A29EBE600767BE7 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -139,26 +116,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CDA20AD51A29E433000D2CBB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDA20AD91A29E433000D2CBB /* OpenGarageKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CDA20AF01A29E663000D2CBB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CDA20B191A29E678000D2CBB /* OpenGarageKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CDA20B081A29E663000D2CBB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,9 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				CDA20ACF1A29E433000D2CBB /* OpenGarageKit */,
-				CDA20ADC1A29E433000D2CBB /* OpenGarageKitTests */,
 				CDA20AF41A29E663000D2CBB /* OpenGarageApp */,
-				CDA20B0E1A29E663000D2CBB /* OpenGarageAppTests */,
 				CDD13F481A29EBE600767BE7 /* OpenGarageTodayExtension */,
 				CDA20ACE1A29E433000D2CBB /* Products */,
 				B73DF3F954419E372C508B8C /* Pods */,
@@ -210,9 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */,
-				CDA20AD81A29E433000D2CBB /* OpenGarageKitTests.xctest */,
-				CDA20AF31A29E663000D2CBB /* OpenGarageApp.app */,
-				CDA20B0B1A29E663000D2CBB /* OpenGarageAppTests.xctest */,
+				CDA20AF31A29E663000D2CBB /* OpenGarage.app */,
 				CDD13F451A29EBE600767BE7 /* OpenGarageTodayExtension.appex */,
 			);
 			name = Products;
@@ -240,23 +198,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CDA20ADC1A29E433000D2CBB /* OpenGarageKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				CDA20ADF1A29E433000D2CBB /* OpenGarageKitTests.m */,
-				CDA20ADD1A29E433000D2CBB /* Supporting Files */,
-			);
-			path = OpenGarageKitTests;
-			sourceTree = "<group>";
-		};
-		CDA20ADD1A29E433000D2CBB /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CDA20ADE1A29E433000D2CBB /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		CDA20AF41A29E663000D2CBB /* OpenGarageApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,23 +221,6 @@
 			children = (
 				CDA20AF61A29E663000D2CBB /* Info.plist */,
 				CDA20AF71A29E663000D2CBB /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CDA20B0E1A29E663000D2CBB /* OpenGarageAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				CDA20B111A29E663000D2CBB /* OpenGarageAppTests.m */,
-				CDA20B0F1A29E663000D2CBB /* Supporting Files */,
-			);
-			path = OpenGarageAppTests;
-			sourceTree = "<group>";
-		};
-		CDA20B0F1A29E663000D2CBB /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CDA20B101A29E663000D2CBB /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -357,27 +281,9 @@
 			productReference = CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CDA20AD71A29E433000D2CBB /* OpenGarageKitTests */ = {
+		CDA20AF21A29E663000D2CBB /* OpenGarage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDA20AE61A29E433000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarageKitTests" */;
-			buildPhases = (
-				CDA20AD41A29E433000D2CBB /* Sources */,
-				CDA20AD51A29E433000D2CBB /* Frameworks */,
-				CDA20AD61A29E433000D2CBB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CDA20ADB1A29E433000D2CBB /* PBXTargetDependency */,
-			);
-			name = OpenGarageKitTests;
-			productName = OpenGarageKitTests;
-			productReference = CDA20AD81A29E433000D2CBB /* OpenGarageKitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		CDA20AF21A29E663000D2CBB /* OpenGarageApp */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CDA20B131A29E663000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarageApp" */;
+			buildConfigurationList = CDA20B131A29E663000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarage" */;
 			buildPhases = (
 				CDA20AEF1A29E663000D2CBB /* Sources */,
 				CDA20AF01A29E663000D2CBB /* Frameworks */,
@@ -391,28 +297,10 @@
 				CDD13F511A29EBE600767BE7 /* PBXTargetDependency */,
 				CD05F0BD1A3097CC001E8C97 /* PBXTargetDependency */,
 			);
-			name = OpenGarageApp;
+			name = OpenGarage;
 			productName = OpenGarageApp;
-			productReference = CDA20AF31A29E663000D2CBB /* OpenGarageApp.app */;
+			productReference = CDA20AF31A29E663000D2CBB /* OpenGarage.app */;
 			productType = "com.apple.product-type.application";
-		};
-		CDA20B0A1A29E663000D2CBB /* OpenGarageAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CDA20B161A29E663000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarageAppTests" */;
-			buildPhases = (
-				CDA20B071A29E663000D2CBB /* Sources */,
-				CDA20B081A29E663000D2CBB /* Frameworks */,
-				CDA20B091A29E663000D2CBB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CDA20B0D1A29E663000D2CBB /* PBXTargetDependency */,
-			);
-			name = OpenGarageAppTests;
-			productName = OpenGarageAppTests;
-			productReference = CDA20B0B1A29E663000D2CBB /* OpenGarageAppTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		CDD13F441A29EBE600767BE7 /* OpenGarageTodayExtension */ = {
 			isa = PBXNativeTarget;
@@ -444,9 +332,6 @@
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 6X47Q5RERE;
 					};
-					CDA20AD71A29E433000D2CBB = {
-						CreatedOnToolsVersion = 6.1;
-					};
 					CDA20AF21A29E663000D2CBB = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 6X47Q5RERE;
@@ -455,10 +340,6 @@
 								enabled = 1;
 							};
 						};
-					};
-					CDA20B0A1A29E663000D2CBB = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = CDA20AF21A29E663000D2CBB;
 					};
 					CDD13F441A29EBE600767BE7 = {
 						CreatedOnToolsVersion = 6.1;
@@ -485,9 +366,7 @@
 			projectRoot = "";
 			targets = (
 				CDA20ACC1A29E433000D2CBB /* OpenGarageKit */,
-				CDA20AD71A29E433000D2CBB /* OpenGarageKitTests */,
-				CDA20AF21A29E663000D2CBB /* OpenGarageApp */,
-				CDA20B0A1A29E663000D2CBB /* OpenGarageAppTests */,
+				CDA20AF21A29E663000D2CBB /* OpenGarage */,
 				CDD13F441A29EBE600767BE7 /* OpenGarageTodayExtension */,
 			);
 		};
@@ -502,13 +381,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CDA20AD61A29E433000D2CBB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CDA20AF11A29E663000D2CBB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -516,13 +388,6 @@
 				CDA28A391A30921300AC1D1C /* Images.xcassets in Resources */,
 				CDA20B011A29E663000D2CBB /* Main.storyboard in Resources */,
 				CDA20B061A29E663000D2CBB /* LaunchScreen.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CDA20B091A29E663000D2CBB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,14 +445,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CDA20AD41A29E433000D2CBB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDA20AE01A29E433000D2CBB /* OpenGarageKitTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CDA20AEF1A29E663000D2CBB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -596,14 +453,6 @@
 				CDA20AFB1A29E663000D2CBB /* AppDelegate.m in Sources */,
 				CDA20AF81A29E663000D2CBB /* main.m in Sources */,
 				CDE34F991A2A319500FE017A /* SettingsViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CDA20B071A29E663000D2CBB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDA20B121A29E663000D2CBB /* OpenGarageAppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,16 +471,6 @@
 			isa = PBXTargetDependency;
 			target = CDA20ACC1A29E433000D2CBB /* OpenGarageKit */;
 			targetProxy = CD05F0BC1A3097CC001E8C97 /* PBXContainerItemProxy */;
-		};
-		CDA20ADB1A29E433000D2CBB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CDA20ACC1A29E433000D2CBB /* OpenGarageKit */;
-			targetProxy = CDA20ADA1A29E433000D2CBB /* PBXContainerItemProxy */;
-		};
-		CDA20B0D1A29E663000D2CBB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CDA20AF21A29E663000D2CBB /* OpenGarageApp */;
-			targetProxy = CDA20B0C1A29E663000D2CBB /* PBXContainerItemProxy */;
 		};
 		CDD13F511A29EBE600767BE7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -785,36 +624,6 @@
 			};
 			name = Release;
 		};
-		CDA20AE71A29E433000D2CBB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OpenGarageKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		CDA20AE81A29E433000D2CBB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OpenGarageKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		CDA20B141A29E663000D2CBB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -844,40 +653,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-			};
-			name = Release;
-		};
-		CDA20B171A29E663000D2CBB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OpenGarageAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenGarageApp.app/OpenGarageApp";
-			};
-			name = Debug;
-		};
-		CDA20B181A29E663000D2CBB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OpenGarageAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenGarageApp.app/OpenGarageApp";
 			};
 			name = Release;
 		};
@@ -934,29 +709,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDA20AE61A29E433000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarageKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CDA20AE71A29E433000D2CBB /* Debug */,
-				CDA20AE81A29E433000D2CBB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CDA20B131A29E663000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarageApp" */ = {
+		CDA20B131A29E663000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDA20B141A29E663000D2CBB /* Debug */,
 				CDA20B151A29E663000D2CBB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CDA20B161A29E663000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarageAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CDA20B171A29E663000D2CBB /* Debug */,
-				CDA20B181A29E663000D2CBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
