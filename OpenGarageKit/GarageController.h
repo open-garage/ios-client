@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GarageKey.h"
 
 @interface GarageController : NSObject
 
-@property (nonatomic) NSString *token;
-@property (nonatomic) NSString *serverUrl;
+@property (nonatomic) GarageKey *garageKey;
 
-- (void)saveToken:(NSString *)token;
-- (void)saveServerURL:(NSString *)url;
+- (void)saveGarageKey:(GarageKey *)garageKey;
+
 - (void)toggleWithResultBlock:(void (^)(BOOL success))resultBlock;
+- (void)statusWithResultBlock:(void (^)(BOOL success))resultBlock;
 
 @end

@@ -7,19 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <OpenGarageKit/OpenGarageKit.h>
 
 @class SettingsViewController;
 
 @protocol SettingsViewControllerDelegate
 
-- (void)settingsViewControllerDidFinish:(SettingsViewController *)controller withToken:(NSString *)token andURL:(NSString *)url;
+- (void)settingsViewControllerDidFinish:(SettingsViewController *)controller withGarageKey:(GarageKey *)garageKey;
 
 @end
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UITableViewController
 
 @property (weak, nonatomic) id<SettingsViewControllerDelegate> delegate;
-@property (nonatomic) NSString *token;
-@property (nonatomic) NSString *serverUrl;
+@property (nonatomic) GarageKey *garageKey;
 
 @end

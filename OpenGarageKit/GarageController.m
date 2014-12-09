@@ -9,9 +9,6 @@
 #import "GarageController.h"
 #import <AFNetworking.h>
 
-#define kToken @"token"
-#define kServerURL @"serverurl"
-
 /**
  iOS Certificate Pinnig:
  http://initwithfunk.com/blog/2014/03/12/afnetworking-ssl-pinning-with-self-signed-certificates/#fnref:1
@@ -22,62 +19,24 @@
 
 @implementation GarageController
 
-- (instancetype)init
+- (void)saveGarageKey:(GarageKey *)garageKey
 {
-    self = [super init];
-    if (self) {
-        [self loadStoredData];
-    }
-    return self;
-}
-
-- (void)loadStoredData {
-    [self loadServerURL];
-    [self loadToken];
-}
-
-- (void)loadToken {
-    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
-    NSString *token = [defaults objectForKey:kToken];
-    
-    _token = token;
-}
-
-- (void)saveToken:(NSString *)token {
-    _token = token;
-    
-    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
-    [defaults setObject:token forKey:kToken];
-    [defaults synchronize];
-}
-
-- (void)loadServerURL {
-    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
-    NSString *url = [defaults objectForKey:kServerURL];
-    
-    _serverUrl = url;
-}
-
-- (void)saveServerURL:(NSString *)url {
-    _serverUrl = url;
-    
-    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
-    [defaults setObject:url forKey:kServerURL];
-    [defaults synchronize];
+    _garageKey = garageKey;
+    [_garageKey saveKey];
 }
 
 - (void)apiCall:(NSString*)call WithResultBlock:(void (^)(BOOL success))resultBlock {
-    if ([_serverUrl length] > 0 && [_token length] > 0) {
+    if ([_garageKey isValid]) {
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:configuration];
         
         manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
         manager.securityPolicy.allowInvalidCertificates = YES;
         
-        NSString *url = [NSString stringWithFormat:@"%@/api/v1/%@", _serverUrl, call];
-        //NSLog(@"DBG: URL: %@ - Token: %@", url, _token);
+        NSString *url = [NSString stringWithFormat:@"%@/api/v1/%@", [_garageKey serverURL], call];
+        //NSLog(@"DBG: URL: %@ - Token: %@", url, _garageKey.serverToken);
         
-        NSDictionary *parameters = @{@"token": _token};
+        NSDictionary *parameters = @{@"token": _garageKey.serverToken};
         NSURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:url parameters:parameters error:nil];
         
         NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {

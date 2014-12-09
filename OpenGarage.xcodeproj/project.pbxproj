@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8291E4FB06626541911A249B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2005044E9F363AFCCD7291 /* libPods.a */; };
 		CD05F0BB1A3097CC001E8C97 /* OpenGarageKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD8EA26A1A37931C0024D859 /* GarageKey.h in Headers */ = {isa = PBXBuildFile; fileRef = CD8EA2681A37931C0024D859 /* GarageKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD8EA26B1A37931C0024D859 /* GarageKey.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8EA2691A37931C0024D859 /* GarageKey.m */; };
 		CDA20AD31A29E433000D2CBB /* OpenGarageKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA20AD21A29E433000D2CBB /* OpenGarageKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDA20AD91A29E433000D2CBB /* OpenGarageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */; };
 		CDA20AE01A29E433000D2CBB /* OpenGarageKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA20ADF1A29E433000D2CBB /* OpenGarageKitTests.m */; };
@@ -92,6 +94,8 @@
 		209E0645CB3F63D15DF93CF5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		2F2005044E9F363AFCCD7291 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE789273F94E7B2696838F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CD8EA2681A37931C0024D859 /* GarageKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GarageKey.h; sourceTree = "<group>"; };
+		CD8EA2691A37931C0024D859 /* GarageKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GarageKey.m; sourceTree = "<group>"; };
 		CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenGarageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA20AD11A29E433000D2CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDA20AD21A29E433000D2CBB /* OpenGarageKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGarageKit.h; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 		CDA20ACF1A29E433000D2CBB /* OpenGarageKit */ = {
 			isa = PBXGroup;
 			children = (
+				CD8EA2681A37931C0024D859 /* GarageKey.h */,
+				CD8EA2691A37931C0024D859 /* GarageKey.m */,
 				CDA20AE91A29E4BA000D2CBB /* GarageController.h */,
 				CDA20AEA1A29E4BA000D2CBB /* GarageController.m */,
 				CDA20AD21A29E433000D2CBB /* OpenGarageKit.h */,
@@ -324,6 +330,7 @@
 			files = (
 				CDA20AD31A29E433000D2CBB /* OpenGarageKit.h in Headers */,
 				CDA20AEB1A29E4BA000D2CBB /* GarageController.h in Headers */,
+				CD8EA26A1A37931C0024D859 /* GarageKey.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD8EA26B1A37931C0024D859 /* GarageKey.m in Sources */,
 				CDA20AEC1A29E4BA000D2CBB /* GarageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -741,6 +749,7 @@
 			baseConfigurationReference = 4CE789273F94E7B2696838F0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
@@ -752,6 +761,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -760,6 +770,7 @@
 			baseConfigurationReference = 209E0645CB3F63D15DF93CF5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;

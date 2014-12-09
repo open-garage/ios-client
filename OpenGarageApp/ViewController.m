@@ -20,15 +20,18 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
-- (GarageController *)garageController {
+- (GarageController *)garageController
+{
     if (_garageController == nil) {
         _garageController = [[GarageController alloc] init];
     }
@@ -36,7 +39,8 @@
     return _garageController;
 }
 
-- (IBAction)toggleButtonPushed:(id)sender {
+- (IBAction)toggleButtonPushed:(id)sender
+{
     _toggleButton.enabled = NO;
     [_progressIndicator startAnimating];
     
@@ -61,23 +65,21 @@
     }];
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     if ([segue.identifier isEqualToString:@"showSettings"]) {
         UINavigationController *navigationController = segue.destinationViewController;
         SettingsViewController *settingsViewController = navigationController.viewControllers[0];
         settingsViewController.delegate = self;
-        settingsViewController.token = self.garageController.token;
-        settingsViewController.serverUrl = self.garageController.serverUrl;
+        settingsViewController.garageKey = self.garageController.garageKey;
     }
 }
 
-#pragma mark - SettingsViewController Delegates
+#pragma mark - SettingsViewController delegate methods
 
-- (void)settingsViewControllerDidFinish:(SettingsViewController *)controller withToken:(NSString *)token andURL:(NSString *)url {
-    [self.garageController saveToken:token];
-    [self.garageController saveServerURL:url];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (void)settingsViewControllerDidFinish:(SettingsViewController *)controller withGarageKey:(GarageKey *)garageKey
+{
+    [self.garageController saveGarageKey:garageKey];
 }
 
 @end

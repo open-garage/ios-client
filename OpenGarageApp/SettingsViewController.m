@@ -8,46 +8,58 @@
 
 #import "SettingsViewController.h"
 
-@interface SettingsViewController ()
+@interface SettingsViewController()
 
+@property (weak, nonatomic) IBOutlet UITextField *addressTextField;
+@property (weak, nonatomic) IBOutlet UITextField *portTextField;
 @property (weak, nonatomic) IBOutlet UITextField *tokenTextField;
-@property (weak, nonatomic) IBOutlet UITextField *serverUrlTextField;
 
 @end
 
 @implementation SettingsViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
-    _tokenTextField.text = _token;
-    _serverUrlTextField.text = _serverUrl;
+    if (self.garageKey && [self.garageKey isValid]) {
+        _addressTextField.text = self.garageKey.serverAddress;
+        _portTextField.text = [NSString stringWithFormat:@"%@", self.garageKey.serverPort];
+        _tokenTextField.text = self.garageKey.serverToken;
+    }
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)saveButtonPushed:(id)sender {
-    _token = _tokenTextField.text;
-    _serverUrl = _serverUrlTextField.text;
+- (GarageKey *)garageKey
+{
+    if (_garageKey) {
+        return _garageKey;
+    }
     
-    if ([self checkinput]) {
-        [_delegate settingsViewControllerDidFinish:self withToken:_token andURL:_serverUrl];
+    _garageKey = [[GarageKey alloc] init];
+    
+    return _garageKey;
+}
+
+- (IBAction)saveButtonPushed:(id)sender
+{
+    self.garageKey.serverAddress = _addressTextField.text;
+    self.garageKey.serverPort = [NSNumber numberWithInteger:[_portTextField.text integerValue]];
+    self.garageKey.serverToken = _tokenTextField.text;
+    
+    if ([self.garageKey isValid]) {
+        [_delegate settingsViewControllerDidFinish:self withGarageKey:self.garageKey];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
-- (IBAction)cancelButtonPushed:(id)sender {
+
+- (IBAction)cancelButtonPushed:(id)sender
+{
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (BOOL)checkinput {
-    // check if strings are empty
-    if ([_token length] < 1 || [_serverUrl length] < 1) {
-        return false;
-    }
-    
-    return true;
 }
 
 @end
