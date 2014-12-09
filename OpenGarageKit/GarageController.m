@@ -25,7 +25,8 @@
     [_garageKey saveKey];
 }
 
-- (void)apiCall:(NSString*)call WithResultBlock:(void (^)(BOOL success))resultBlock {
+- (void)apiCall:(NSString*)call WithResultBlock:(void (^)(BOOL success))resultBlock
+{
     if ([_garageKey isValid]) {
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:configuration];
@@ -63,18 +64,19 @@
         
         [dataTask resume];
     } else {
-        NSLog(@"ERROR: serverurl or authentication token empty");
         resultBlock(false);
     }
 }
 
-- (void)toggleWithResultBlock:(void (^)(BOOL success))resultBlock {
+- (void)toggleWithResultBlock:(void (^)(BOOL success))resultBlock
+{
     [self apiCall:@"toggle" WithResultBlock:^(BOOL success) {
         resultBlock(success);
     }];
 }
 
-- (void)statusWithResultBlock:(void (^)(BOOL success))resultBlock {
+- (void)statusWithResultBlock:(void (^)(BOOL success))resultBlock
+{
     [self apiCall:@"status" WithResultBlock:^(BOOL success) {
         resultBlock(success);
     }];
