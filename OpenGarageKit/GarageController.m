@@ -43,8 +43,7 @@
 - (void)apiCall:(NSString*)call WithResultBlock:(void (^)(BOOL success))resultBlock
 {
     if ([self.garageKey isValid]) {
-        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:configuration];
+        AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
         
         manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
         manager.securityPolicy.allowInvalidCertificates = YES;
@@ -119,35 +118,25 @@
 
 - (void)startMonitoringServer
 {
-    if ([self.garageKey serverURL]) {
-        NSURL *baseURL = [NSURL URLWithString:[self.garageKey serverURL]];
-        _serverStatusManager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:baseURL];
-        
-        NSOperationQueue *operationQueue = _serverStatusManager.operationQueue;
-        
-        __weak typeof(self) weakSelf = self;
-        
-        [_serverStatusManager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-            switch (status) {
-                case AFNetworkReachabilityStatusReachableViaWWAN:
-                case AFNetworkReachabilityStatusReachableViaWiFi:
-                    //NSLog(@"DBG: Open-Garage server %@ is reachable", baseURL);
-                    [operationQueue setSuspended:NO];
-                    [weakSelf openGarageServerIsReachable:YES];
-                    break;
-                case AFNetworkReachabilityStatusNotReachable:
-                default:
-                    //NSLog(@"DBG: Open-Garage server %@ is NOT reachable", baseURL);
-                    [operationQueue setSuspended:YES];
-                    [weakSelf openGarageServerIsReachable:NO];
-                    break;
-            }
-        }];
-        
-        [_serverStatusManager.reachabilityManager startMonitoring];
-    } else {
-        NSLog(@"ERROR: No server URL set");
-    }
+    __weak typeof(self) weakSelf = self;
+    
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                //NSLog(@"DBG: Network is reachable");
+                [weakSelf openGarageServerIsReachable:YES];
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+            case AFNetworkReachabilityStatusUnknown:
+            default:
+                //NSLog(@"DBG: Network is NOT reachable");
+                [weakSelf openGarageServerIsReachable:NO];
+                break;
+        }
+    }];
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
 }
 
 - (void)stopMonitoringServer
