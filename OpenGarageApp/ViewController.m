@@ -14,7 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *toggleButton;
 @property (nonatomic) GarageController *garageController;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *progressIndicator;
 @property (weak, nonatomic) IBOutlet UIView *garageDoorView;
 
 @property BOOL closeDoor;
@@ -63,13 +62,6 @@
 - (IBAction)toggleButtonPushed:(id)sender
 {
     _toggleButton.enabled = NO;
-    [_progressIndicator startAnimating];
-    
-    if (_closeDoor) {
-        _closeDoor = NO;
-    } else {
-        _closeDoor = YES;
-    }
     
     [self addSystemSpringAnimationToView:_garageDoorView andOpenDoor:_closeDoor];
     
@@ -86,8 +78,7 @@
             [self presentViewController:alert animated:YES completion:nil];
         }
         
-        _toggleButton.enabled = YES;
-        [_progressIndicator stopAnimating];
+        //_toggleButton.enabled = YES;
     }];
 }
 
@@ -129,24 +120,30 @@
           initialSpringVelocity:0.0
                         options:UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
-                         CGFloat amount = 100;
+                         CGFloat amount = 60;
                          
                          if (open) {
                              if (view.frame.origin.x == 50) {
-                                 view.frame = CGRectOffset(view.frame, 0, -amount);
-                             } else {
                                  view.frame = CGRectOffset(view.frame, 0, amount);
+                             } else {
+                                 view.frame = CGRectOffset(view.frame, 0, -amount);
                              }
                          } else {
                              if (view.frame.origin.x == 50) {
-                                 view.frame = CGRectOffset(view.frame, 0, amount);
-                             } else {
                                  view.frame = CGRectOffset(view.frame, 0, -amount);
+                             } else {
+                                 view.frame = CGRectOffset(view.frame, 0, amount);
                              }
                          }
                          
                      } completion:^(BOOL finished) {
+                         if (_closeDoor) {
+                             _closeDoor = NO;
+                         } else {
+                             _closeDoor = YES;
+                         }
                          
+                         _toggleButton.enabled = YES;
                      }];
 }
 

@@ -17,6 +17,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbQ-0y-x2D">
+                                <rect key="frame" x="250" y="350" width="100" height="100"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="9Wh-tX-IK1"/>
+                                    <constraint firstAttribute="width" constant="100" id="SCS-3k-kWd"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BJG-Am-DeR">
+                                <rect key="frame" x="240" y="337" width="120" height="55"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="6XU-ZT-Fbp"/>
+                                    <constraint firstAttribute="width" constant="120" id="DTd-EB-okU"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU2-2w-ryS">
                                 <rect key="frame" x="264" y="279" width="72" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -40,33 +56,31 @@
                                     <segue destination="YSQ-lR-Hj7" kind="presentation" identifier="showSettings" id="ZRz-xf-f28"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="RaZ-As-Un9">
-                                <rect key="frame" x="290" y="329" width="20" height="20"/>
-                            </activityIndicatorView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DbQ-0y-x2D">
-                                <rect key="frame" x="250" y="357" width="100" height="100"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QMD-Zp-FPy">
+                                <rect key="frame" x="240" y="392" width="120" height="25"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="9Wh-tX-IK1"/>
-                                    <constraint firstAttribute="width" constant="100" id="SCS-3k-kWd"/>
+                                    <constraint firstAttribute="width" constant="120" id="9P3-tn-FL1"/>
+                                    <constraint firstAttribute="height" constant="25" id="fDu-2H-aJK"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="DbQ-0y-x2D" firstAttribute="top" secondItem="fU2-2w-ryS" secondAttribute="bottom" constant="29" id="08V-z0-MNk"/>
                             <constraint firstAttribute="centerY" secondItem="fU2-2w-ryS" secondAttribute="centerY" id="6Zg-gT-Pwi"/>
+                            <constraint firstAttribute="centerX" secondItem="BJG-Am-DeR" secondAttribute="centerX" id="SNd-4d-PsR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VmO-GU-Vco" secondAttribute="trailing" constant="8" id="UJ9-Be-VR3"/>
+                            <constraint firstItem="BJG-Am-DeR" firstAttribute="top" secondItem="fU2-2w-ryS" secondAttribute="bottom" constant="16" id="VX2-xJ-dwq"/>
+                            <constraint firstItem="QMD-Zp-FPy" firstAttribute="top" secondItem="BJG-Am-DeR" secondAttribute="bottom" id="bUh-sw-iC9"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="VmO-GU-Vco" secondAttribute="bottom" constant="16" id="erp-GU-Cel"/>
-                            <constraint firstItem="RaZ-As-Un9" firstAttribute="top" secondItem="fU2-2w-ryS" secondAttribute="bottom" constant="8" id="ljQ-td-qGb"/>
+                            <constraint firstAttribute="centerX" secondItem="QMD-Zp-FPy" secondAttribute="centerX" id="rcj-ZN-gkI"/>
                             <constraint firstAttribute="centerX" secondItem="DbQ-0y-x2D" secondAttribute="centerX" id="sUH-rq-7HP"/>
-                            <constraint firstAttribute="centerX" secondItem="RaZ-As-Un9" secondAttribute="centerX" id="uTC-dT-7lB"/>
                             <constraint firstAttribute="centerX" secondItem="fU2-2w-ryS" secondAttribute="centerX" id="up6-9Q-xPq"/>
-                            <constraint firstItem="DbQ-0y-x2D" firstAttribute="top" secondItem="RaZ-As-Un9" secondAttribute="bottom" constant="8" id="yTT-7G-ucw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="garageDoorView" destination="DbQ-0y-x2D" id="ySW-dc-UTN"/>
-                        <outlet property="progressIndicator" destination="RaZ-As-Un9" id="tMS-aw-azZ"/>
                         <outlet property="toggleButton" destination="fU2-2w-ryS" id="Zvp-2x-6wU"/>
                     </connections>
                 </viewController>
