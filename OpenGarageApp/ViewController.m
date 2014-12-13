@@ -45,6 +45,9 @@
     if (_garageController == nil) {
         _garageController = [[GarageController alloc] init];
         _garageController.delegate = self;
+        
+        // enable / disable debugging mode
+        _garageController.debuggingMode = YES;
     }
     
     return _garageController;

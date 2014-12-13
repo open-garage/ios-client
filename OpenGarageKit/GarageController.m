@@ -51,11 +51,17 @@
         NSString *url = [NSString stringWithFormat:@"%@/api/v1/%@", [self.garageKey serverURL], call];
         
         //NSLog(@"DBG: URL: %@ - Token: %@", url, self.garageKey.serverToken);
-        //NSDictionary *parameters = @{@"token": self.garageKey.serverToken};
-        NSDictionary *parameters = @{
-                                     @"token": self.garageKey.serverToken,
-                                     @"debug": @1
-                                     };
+        
+        NSDictionary *parameters;
+        
+        if (_debuggingMode) {
+            parameters = @{
+                           @"token": self.garageKey.serverToken,
+                           @"debug": @1
+                           };
+        } else {
+            parameters = @{ @"token": self.garageKey.serverToken };
+        }
         
         NSURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:url parameters:parameters error:nil];
         

@@ -22,6 +22,7 @@
 @property (nonatomic) GarageKey *garageKey;
 @property BOOL serverIsReachable;
 @property (weak, nonatomic) id <GarageControllerDelegate> delegate;
+@property BOOL debuggingMode;
 
 - (void)saveGarageKey:(GarageKey *)garageKey;
 
