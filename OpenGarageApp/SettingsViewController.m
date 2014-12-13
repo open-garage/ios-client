@@ -24,6 +24,9 @@
 {
     [super viewDidLoad];
     
+    // removes warning about row height zero
+    self.tableView.rowHeight = 44;
+    
     if (self.garageKey && [self.garageKey isValid]) {
         _addressTextField.text = self.garageKey.serverAddress;
         _portTextField.text = [NSString stringWithFormat:@"%@", self.garageKey.serverPort];
