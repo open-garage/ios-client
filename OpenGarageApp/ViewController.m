@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *toggleButton;
 @property (nonatomic) GarageController *garageController;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *progressIndicator;
+@property (weak, nonatomic) IBOutlet UIView *garageDoorView;
+
+@property BOOL closeDoor;
 
 @end
 
@@ -23,6 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (DEBUGGING_MODE == YES) {
+        [_toggleButton setTitle:@"Toggle (Debug)" forState:UIControlStateNormal];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -58,21 +65,26 @@
     _toggleButton.enabled = NO;
     [_progressIndicator startAnimating];
     
+    if (_closeDoor) {
+        _closeDoor = NO;
+    } else {
+        _closeDoor = YES;
+    }
+    
+    [self addSystemSpringAnimationToView:_garageDoorView andOpenDoor:_closeDoor];
     
     [self.garageController toggleWithResultBlock:^(BOOL success) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Garage Door", @"Garage Door Open Dialog") message:@"" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-        
-        [alert addAction:okButton];
-        
         if (success) {
-            alert.message = NSLocalizedString(@"Successfully toggled garage door", @"Garage door successfully opened dialog");
-            
+            //alert.message = NSLocalizedString(@"Successfully toggled garage door", @"Garage door successfully opened dialog");
         } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Garage Door", @"Garage Door Open Dialog") message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okButton = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+            
+            [alert addAction:okButton];
+            
             alert.message = NSLocalizedString(@"Error while toggling garage door", @"Error while toggling garage door dialog");
+            [self presentViewController:alert animated:YES completion:nil];
         }
-        
-        [self presentViewController:alert animated:YES completion:nil];
         
         _toggleButton.enabled = YES;
         [_progressIndicator stopAnimating];
@@ -105,6 +117,38 @@
     } else {
         _toggleButton.enabled = NO;
     }
+}
+
+#pragma mark - Animation methods
+
+- (void) addSystemSpringAnimationToView:(UIView *)view andOpenDoor:(BOOL)open
+{
+    [UIView animateWithDuration:1.0
+                          delay:0.0
+         usingSpringWithDamping:0.6
+          initialSpringVelocity:0.0
+                        options:UIViewAnimationOptionBeginFromCurrentState
+                     animations:^{
+                         CGFloat amount = 100;
+                         
+                         if (open) {
+                             if (view.frame.origin.x == 50) {
+                                 view.frame = CGRectOffset(view.frame, 0, -amount);
+                             } else {
+                                 view.frame = CGRectOffset(view.frame, 0, amount);
+                             }
+                         } else {
+                             if (view.frame.origin.x == 50) {
+                                 view.frame = CGRectOffset(view.frame, 0, amount);
+                             } else {
+                                 view.frame = CGRectOffset(view.frame, 0, -amount);
+                             }
+                         }
+                         
+                     } completion:^(BOOL finished) {
+                         
+                     }];
+    
 }
 
 @end
