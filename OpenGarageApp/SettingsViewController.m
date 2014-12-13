@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *addressTextField;
 @property (weak, nonatomic) IBOutlet UITextField *portTextField;
 @property (weak, nonatomic) IBOutlet UITextField *tokenTextField;
+@property (weak, nonatomic) IBOutlet UILabel *versionTextField;
+@property (weak, nonatomic) IBOutlet UILabel *buildTextField;
 
 @end
 
@@ -26,6 +28,8 @@
         _addressTextField.text = self.garageKey.serverAddress;
         _portTextField.text = [NSString stringWithFormat:@"%@", self.garageKey.serverPort];
         _tokenTextField.text = self.garageKey.serverToken;
+        _versionTextField.text = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+        _buildTextField.text = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
     }
 }
 
@@ -60,6 +64,13 @@
 - (IBAction)cancelButtonPushed:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)websiteButtonPushed:(id)sender {
+    
+    UIButton *button = (UIButton *) sender;
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:button.titleLabel.text]];
 }
 
 @end

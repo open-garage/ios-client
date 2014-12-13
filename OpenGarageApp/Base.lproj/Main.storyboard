@@ -63,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="297" y="212"/>
         </scene>
-        <!--SETTINGS-->
+        <!--Settings-->
         <scene sceneID="e98-3t-zMk">
             <objects>
                 <tableViewController id="i3Y-k2-H6A" customClass="SettingsViewController" sceneMemberID="viewController">
@@ -90,7 +90,7 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="QbV-y3-HBP"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -116,7 +116,7 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="IUo-ez-k6a"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="8000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j7F-Ps-y9y">
@@ -152,7 +152,7 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="vtS-Sa-hcZ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -169,13 +169,78 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="ABOUT" id="r4S-Xs-gM0">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Zb3-iP-Bmo" detailTextLabel="WMs-Gc-fNx" style="IBUITableViewCellStyleValue1" id="LaZ-8H-8JW">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LaZ-8H-8JW" id="QqZ-Iq-ZCP">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Version" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zb3-iP-Bmo">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WMs-Gc-fNx">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="m9X-6g-0mh" detailTextLabel="zuk-cv-MlQ" style="IBUITableViewCellStyleValue1" id="n9e-Iy-dSV">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n9e-Iy-dSV" id="O4m-AE-OyJ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Build" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m9X-6g-0mh">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zuk-cv-MlQ">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Zg6-eh-ECj">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zg6-eh-ECj" id="HEF-tS-MSL">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AZ-Jd-EEu">
+                                                    <rect key="frame" x="190" y="7" width="220" height="30"/>
+                                                    <state key="normal" title="https://github.com/open-garage">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="websiteButtonPushed:" destination="i3Y-k2-H6A" eventType="touchUpInside" id="sbR-53-bTe"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="4AZ-Jd-EEu" secondAttribute="centerY" id="SAu-mf-g4I"/>
+                                                <constraint firstAttribute="centerX" secondItem="4AZ-Jd-EEu" secondAttribute="centerX" id="hkf-ZS-lkD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="i3Y-k2-H6A" id="6p8-bu-S0o"/>
                             <outlet property="delegate" destination="i3Y-k2-H6A" id="Zha-9m-uVw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="SETTINGS" id="k5Q-Lc-2we">
+                    <navigationItem key="navigationItem" title="Settings" id="k5Q-Lc-2we">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Dm9-m4-q9h">
                             <connections>
                                 <action selector="cancelButtonPushed:" destination="i3Y-k2-H6A" id="WK8-wR-syO"/>
@@ -189,13 +254,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="Eee-OO-0iU" id="203-Ct-qbi"/>
+                        <outlet property="buildTextField" destination="zuk-cv-MlQ" id="wCV-fA-M5d"/>
                         <outlet property="portTextField" destination="j7F-Ps-y9y" id="R34-VN-yn6"/>
                         <outlet property="tokenTextField" destination="O10-AM-vfj" id="b9a-Xt-hEa"/>
+                        <outlet property="versionTextField" destination="WMs-Gc-fNx" id="1pZ-XN-OI0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bvp-5j-Llh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2277" y="-177"/>
+            <point key="canvasLocation" x="2276" y="-173"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="elu-ub-TQ4">
