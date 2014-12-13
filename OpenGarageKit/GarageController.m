@@ -48,20 +48,6 @@
         manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
         manager.securityPolicy.allowInvalidCertificates = YES;
         
-        [manager.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-            switch (status) {
-                case AFNetworkReachabilityStatusReachableViaWiFi:
-                case AFNetworkReachabilityStatusReachableViaWWAN:
-                    NSLog(@"DBG: REACHABLE");
-                    break;
-                case AFNetworkReachabilityStatusNotReachable:
-                case AFNetworkReachabilityStatusUnknown:
-                default:
-                    NSLog(@"DBG: NOT REACHABLE");
-                    break;
-            }
-        }];
-        
         NSString *url = [NSString stringWithFormat:@"%@/api/v1/%@", [self.garageKey serverURL], call];
         
         //NSLog(@"DBG: URL: %@ - Token: %@", url, self.garageKey.serverToken);
