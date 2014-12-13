@@ -9,13 +9,26 @@
 #import <Foundation/Foundation.h>
 #import "GarageKey.h"
 
+@class GarageController;
+
+@protocol GarageControllerDelegate
+
+- (void)openGarageServerReachabilityChanged:(BOOL)reachable;
+
+@end
+
 @interface GarageController : NSObject
 
 @property (nonatomic) GarageKey *garageKey;
+@property BOOL serverIsReachable;
+@property (weak, nonatomic) id <GarageControllerDelegate> delegate;
 
 - (void)saveGarageKey:(GarageKey *)garageKey;
 
 - (void)toggleWithResultBlock:(void (^)(BOOL success))resultBlock;
 - (void)statusWithResultBlock:(void (^)(BOOL success))resultBlock;
+
+- (void)startMonitoringServer;
+- (void)stopMonitoringServer;
 
 @end

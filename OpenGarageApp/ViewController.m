@@ -10,7 +10,7 @@
 #import "ViewController.h"
 #import "SettingsViewController.h"
 
-@interface ViewController () <SettingsViewControllerDelegate>
+@interface ViewController () <SettingsViewControllerDelegate, GarageControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *toggleButton;
 @property (nonatomic) GarageController *garageController;
@@ -25,6 +25,16 @@
     [super viewDidLoad];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self.garageController startMonitoringServer];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.garageController stopMonitoringServer];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -34,6 +44,7 @@
 {
     if (_garageController == nil) {
         _garageController = [[GarageController alloc] init];
+        _garageController.delegate = self;
     }
     
     return _garageController;
@@ -80,6 +91,17 @@
 - (void)settingsViewControllerDidFinish:(SettingsViewController *)controller withGarageKey:(GarageKey *)garageKey
 {
     [self.garageController saveGarageKey:garageKey];
+}
+
+#pragma mark - OpenGarageController delegate methods
+
+- (void)openGarageServerReachabilityChanged:(BOOL)reachable
+{
+    if (reachable) {
+        _toggleButton.enabled = YES;
+    } else {
+        _toggleButton.enabled = NO;
+    }
 }
 
 @end

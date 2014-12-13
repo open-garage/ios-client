@@ -68,7 +68,11 @@
 
 - (NSString *)serverURL
 {
-    return [NSString stringWithFormat:@"https://%@:%li", _serverAddress, (long)[_serverPort integerValue]];
+    if ([self isValid]) {
+        return [NSString stringWithFormat:@"https://%@:%li", _serverAddress, (long)[_serverPort integerValue]];
+    }
+    
+    return nil;
 }
 
 @end
