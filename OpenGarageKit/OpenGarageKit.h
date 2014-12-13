@@ -14,6 +14,8 @@ FOUNDATION_EXPORT double OpenGarageKitVersionNumber;
 //! Project version string for OpenGarageKit.
 FOUNDATION_EXPORT const unsigned char OpenGarageKitVersionString[];
 
+#define DEBUGGING_MODE YES
+
 // In this header, you should import all the public headers of your framework using statements like #import <OpenGarageKit/PublicHeader.h>
 
 #import <OpenGarageKit/GarageController.h>

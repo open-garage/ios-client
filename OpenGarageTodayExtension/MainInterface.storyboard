@@ -14,14 +14,24 @@
                         <viewControllerLayoutGuide type="bottom" id="RK8-qQ-Y2k"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4n-Hc-WEC">
-                                <rect key="frame" x="16" y="-22" width="71" height="143"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Od-uf-R7h">
+                                <rect key="frame" x="279" y="47" width="25" height="17"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="143" id="2Mn-If-mez"/>
-                                    <constraint firstAttribute="width" constant="71" id="SR8-AY-mGY"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="elP-bR-1Pn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4n-Hc-WEC">
+                                <rect key="frame" x="116" y="11" width="88" height="88"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="D6u-Gy-BQO"/>
+                                    <constraint firstAttribute="height" constant="88" id="Ihj-yb-QRO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Toggle">
@@ -31,22 +41,13 @@
                                     <action selector="toggleButtonPushed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="2vY-RM-68u"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Od-uf-R7h">
-                                <rect key="frame" x="90" y="40" width="209" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="209" id="Yx8-iG-Tu5"/>
-                                    <constraint firstAttribute="height" constant="21" id="ahT-Hd-iwS"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="5Od-uf-R7h" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" constant="-5" id="262-iZ-eKa"/>
-                            <constraint firstAttribute="centerY" secondItem="Z4n-Hc-WEC" secondAttribute="centerY" id="T4Z-kk-4pe"/>
-                            <constraint firstItem="Z4n-Hc-WEC" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" id="hgg-V3-Ofo"/>
-                            <constraint firstAttribute="centerY" secondItem="5Od-uf-R7h" secondAttribute="centerY" id="lg7-Bh-6Og"/>
+                            <constraint firstItem="Z4n-Hc-WEC" firstAttribute="top" secondItem="A6A-s3-AbG" secondAttribute="bottom" constant="11" id="Jlr-xn-fX3"/>
+                            <constraint firstAttribute="centerX" secondItem="Z4n-Hc-WEC" secondAttribute="centerX" id="RM1-V0-Oay"/>
+                            <constraint firstItem="RK8-qQ-Y2k" firstAttribute="top" secondItem="Z4n-Hc-WEC" secondAttribute="bottom" constant="11" id="mc4-zr-XzO"/>
+                            <constraint firstAttribute="centerY" secondItem="5Od-uf-R7h" secondAttribute="centerY" id="q50-Bw-I4X"/>
+                            <constraint firstItem="5Od-uf-R7h" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailingMargin" id="tE4-zQ-uY8"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -54,7 +55,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="100"/>
+                    <size key="freeformSize" width="320" height="110"/>
                     <connections>
                         <outlet property="infoLabel" destination="5Od-uf-R7h" id="tBY-jL-zPo"/>
                     </connections>

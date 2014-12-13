@@ -47,7 +47,7 @@
         _garageController.delegate = self;
         
         // enable / disable debugging mode
-        _garageController.debuggingMode = YES;
+        _garageController.debuggingMode = DEBUGGING_MODE;
     }
     
     return _garageController;

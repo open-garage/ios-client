@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _infoLabel.text = @"";
+    
+    //self.preferredContentSize = CGSizeMake(0, 88);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,6 +46,8 @@
 - (GarageController *)garageController {
     if (_garageController == nil) {
         _garageController = [[GarageController alloc] init];
+        
+        _garageController.debuggingMode = DEBUGGING_MODE;
     }
     
     return _garageController;
