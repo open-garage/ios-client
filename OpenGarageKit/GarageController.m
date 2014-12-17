@@ -57,10 +57,14 @@
         if (_debuggingMode) {
             parameters = @{
                            @"token": self.garageKey.serverToken,
-                           @"debug": @1
+                           @"state": @"toggle",
+                           @"debug": @"on"
                            };
         } else {
-            parameters = @{ @"token": self.garageKey.serverToken };
+            parameters = @{
+                           @"token": self.garageKey.serverToken,
+                           @"state": @"toggle"
+                           };
         }
         
         NSURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:url parameters:parameters error:nil];
