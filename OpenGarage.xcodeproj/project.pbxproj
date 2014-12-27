@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		8291E4FB06626541911A249B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2005044E9F363AFCCD7291 /* libPods.a */; };
 		CD05F0BB1A3097CC001E8C97 /* OpenGarageKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD7296B61A4F5D15008D4CAE /* BeaconController.h in Headers */ = {isa = PBXBuildFile; fileRef = CDFD42411A4F00E900AC4F82 /* BeaconController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD7296B71A4F5D1C008D4CAE /* BeaconController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFD42421A4F00E900AC4F82 /* BeaconController.m */; };
+		CD7296B81A4F5EAA008D4CAE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD42451A4F020A00AC4F82 /* CoreLocation.framework */; };
 		CD8EA26A1A37931C0024D859 /* GarageKey.h in Headers */ = {isa = PBXBuildFile; fileRef = CD8EA2681A37931C0024D859 /* GarageKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD8EA26B1A37931C0024D859 /* GarageKey.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8EA2691A37931C0024D859 /* GarageKey.m */; };
 		CDA20AD31A29E433000D2CBB /* OpenGarageKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA20AD21A29E433000D2CBB /* OpenGarageKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CDA20AEB1A29E4BA000D2CBB /* GarageController.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA20AE91A29E4BA000D2CBB /* GarageController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDA20AEC1A29E4BA000D2CBB /* GarageController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA20AEA1A29E4BA000D2CBB /* GarageController.m */; };
 		CDA20AEE1A29E627000D2CBB /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = CDA20AED1A29E627000D2CBB /* server.cer */; };
 		CDA20AF81A29E663000D2CBB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA20AF71A29E663000D2CBB /* main.m */; };
@@ -20,7 +22,6 @@
 		CDA20AFE1A29E663000D2CBB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA20AFD1A29E663000D2CBB /* ViewController.m */; };
 		CDA20B011A29E663000D2CBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDA20AFF1A29E663000D2CBB /* Main.storyboard */; };
 		CDA20B061A29E663000D2CBB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDA20B041A29E663000D2CBB /* LaunchScreen.xib */; };
-		CDA20B191A29E678000D2CBB /* OpenGarageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */; };
 		CDA28A331A308F4D00AC1D1C /* OpenGarageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */; };
 		CDA28A391A30921300AC1D1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA20B021A29E663000D2CBB /* Images.xcassets */; };
 		CDA28A3A1A30921500AC1D1C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDA20B021A29E663000D2CBB /* Images.xcassets */; };
@@ -29,6 +30,7 @@
 		CDD13F4F1A29EBE600767BE7 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDD13F4E1A29EBE600767BE7 /* MainInterface.storyboard */; };
 		CDD13F521A29EBE600767BE7 /* OpenGarageTodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CDD13F451A29EBE600767BE7 /* OpenGarageTodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CDE34F991A2A319500FE017A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE34F981A2A319500FE017A /* SettingsViewController.m */; };
+		CDFD424A1A4F502200AC4F82 /* GarageController.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA20AE91A29E4BA000D2CBB /* GarageController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,9 @@
 		CDD13F581A29EFC500767BE7 /* OpenGarageApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = OpenGarageApp.entitlements; sourceTree = "<group>"; };
 		CDE34F971A2A319500FE017A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		CDE34F981A2A319500FE017A /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		CDFD42411A4F00E900AC4F82 /* BeaconController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconController.h; sourceTree = "<group>"; };
+		CDFD42421A4F00E900AC4F82 /* BeaconController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconController.m; sourceTree = "<group>"; };
+		CDFD42451A4F020A00AC4F82 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD7296B81A4F5EAA008D4CAE /* CoreLocation.framework in Frameworks */,
 				8291E4FB06626541911A249B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,7 +126,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA20B191A29E678000D2CBB /* OpenGarageKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +144,7 @@
 		23CCBF0686713481C1817F3C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CDFD42451A4F020A00AC4F82 /* CoreLocation.framework */,
 				2F2005044E9F363AFCCD7291 /* libPods.a */,
 				CDD13F461A29EBE600767BE7 /* NotificationCenter.framework */,
 			);
@@ -179,6 +185,8 @@
 		CDA20ACF1A29E433000D2CBB /* OpenGarageKit */ = {
 			isa = PBXGroup;
 			children = (
+				CDFD42411A4F00E900AC4F82 /* BeaconController.h */,
+				CDFD42421A4F00E900AC4F82 /* BeaconController.m */,
 				CD8EA2681A37931C0024D859 /* GarageKey.h */,
 				CD8EA2691A37931C0024D859 /* GarageKey.m */,
 				CDA20AE91A29E4BA000D2CBB /* GarageController.h */,
@@ -252,9 +260,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD7296B61A4F5D15008D4CAE /* BeaconController.h in Headers */,
 				CDA20AD31A29E433000D2CBB /* OpenGarageKit.h in Headers */,
-				CDA20AEB1A29E4BA000D2CBB /* GarageController.h in Headers */,
 				CD8EA26A1A37931C0024D859 /* GarageKey.h in Headers */,
+				CDFD424A1A4F502200AC4F82 /* GarageController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +347,9 @@
 						DevelopmentTeam = 6X47Q5RERE;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 						};
@@ -456,6 +468,7 @@
 			files = (
 				CD8EA26B1A37931C0024D859 /* GarageKey.m in Sources */,
 				CDA20AEC1A29E4BA000D2CBB /* GarageController.m in Sources */,
+				CD7296B71A4F5D1C008D4CAE /* BeaconController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

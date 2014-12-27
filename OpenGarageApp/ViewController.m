@@ -10,11 +10,13 @@
 #import "ViewController.h"
 #import "SettingsViewController.h"
 
-@interface ViewController () <SettingsViewControllerDelegate, GarageControllerDelegate>
+@interface ViewController () <SettingsViewControllerDelegate, GarageControllerDelegate, BeaconControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *toggleButton;
-@property (nonatomic) GarageController *garageController;
 @property (weak, nonatomic) IBOutlet UIView *garageDoorView;
+
+@property (nonatomic) GarageController *garageController;
+@property (nonatomic) BeaconController *beaconController;
 
 @property BOOL closeDoor;
 
@@ -29,6 +31,11 @@
     if (DEBUGGING_MODE == YES) {
         [_toggleButton setTitle:@"Toggle (Debug)" forState:UIControlStateNormal];
     }
+    
+    _beaconController = [[BeaconController alloc] init];
+    _beaconController.delegate = self;
+    
+    [_beaconController startMonitoringForBeacons];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -99,7 +106,7 @@
     [self.garageController saveGarageKey:garageKey];
 }
 
-#pragma mark - OpenGarageController delegate methods
+#pragma mark - GarageController delegate methods
 
 - (void)openGarageServerReachabilityChanged:(BOOL)reachable
 {
@@ -108,6 +115,13 @@
     } else {
         _toggleButton.enabled = NO;
     }
+}
+
+#pragma mark - BeaconController delegate methods
+
+- (void)beaconController:(BeaconController *)controller foundBeaconWithUUID:(NSUUID *)uuid withMajor:(NSNumber *)major andWithMinor:(NSNumber *)minor
+{
+    NSLog(@"INFO: Found Open-Garage iBeacon");
 }
 
 #pragma mark - Animation methods
