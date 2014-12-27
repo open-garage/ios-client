@@ -31,9 +31,10 @@
         _addressTextField.text = self.garageKey.serverAddress;
         _portTextField.text = [NSString stringWithFormat:@"%@", self.garageKey.serverPort];
         _tokenTextField.text = self.garageKey.serverToken;
-        _versionTextField.text = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
-        _buildTextField.text = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
     }
+    
+    _versionTextField.text = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
+    _buildTextField.text = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
 }
 
 - (void)didReceiveMemoryWarning
