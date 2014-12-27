@@ -25,6 +25,7 @@
 @property BOOL debuggingMode;
 
 - (void)saveGarageKey:(GarageKey *)garageKey;
+- (BOOL)garageKeyIsValid;
 
 - (void)toggleWithResultBlock:(void (^)(BOOL success))resultBlock;
 - (void)statusWithResultBlock:(void (^)(BOOL success))resultBlock;

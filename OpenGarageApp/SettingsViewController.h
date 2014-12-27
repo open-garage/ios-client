@@ -14,6 +14,7 @@
 @protocol SettingsViewControllerDelegate
 
 - (void)settingsViewControllerDidFinish:(SettingsViewController *)controller withGarageKey:(GarageKey *)garageKey;
+- (void)settingsViewController:(SettingsViewController *)controller changedBeaconStatusTo:(BOOL)status;
 
 @end
 
@@ -21,5 +22,6 @@
 
 @property (weak, nonatomic) id<SettingsViewControllerDelegate> delegate;
 @property (nonatomic) GarageKey *garageKey;
+@property BOOL iBeaconState;
 
 @end

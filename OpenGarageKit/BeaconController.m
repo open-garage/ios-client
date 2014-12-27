@@ -14,6 +14,8 @@
 @property (nonatomic) CLBeaconRegion *beaconRegion;
 @property (nonatomic) CLBeacon *currentBeacon;
 
+@property BOOL isCurrentlyMonitoring;
+
 @end
 
 @implementation BeaconController
@@ -46,6 +48,7 @@
 
 - (void)startMonitoringForBeacons
 {
+    _isCurrentlyMonitoring = YES;
     [self.locationManager startMonitoringForRegion:_beaconRegion];
 }
 
@@ -53,6 +56,12 @@
 {
     [self.locationManager stopRangingBeaconsInRegion:_beaconRegion];
     [self.locationManager stopMonitoringForRegion:_beaconRegion];
+    _isCurrentlyMonitoring = NO;
+}
+
+- (BOOL)isMonitoring
+{
+    return _isCurrentlyMonitoring;
 }
 
 - (BOOL)isCurrentBeacon:(CLBeacon *)newBeacon

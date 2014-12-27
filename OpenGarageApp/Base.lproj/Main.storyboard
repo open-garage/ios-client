@@ -194,6 +194,42 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="FEATURES" id="b9R-Xt-KdE">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uUZ-Vp-l7J">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uUZ-Vp-l7J" id="qrX-Sg-ALJ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iBeacon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUq-uc-5nq">
+                                                    <rect key="frame" x="18" y="11" width="70" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="0FN-ow-e0a"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7N8-Hj-NWA">
+                                                    <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="49" id="umD-Tf-WVK"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="iBeaconUISwitchPushed:" destination="i3Y-k2-H6A" eventType="valueChanged" id="PaX-Wz-BxX"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="PUq-uc-5nq" secondAttribute="centerY" id="CuB-b5-Ijt"/>
+                                                <constraint firstItem="7N8-Hj-NWA" firstAttribute="trailing" secondItem="qrX-Sg-ALJ" secondAttribute="trailingMargin" id="Dkq-QG-JOB"/>
+                                                <constraint firstItem="PUq-uc-5nq" firstAttribute="leading" secondItem="qrX-Sg-ALJ" secondAttribute="leadingMargin" constant="10" id="MIo-wM-9NW"/>
+                                                <constraint firstAttribute="centerY" secondItem="7N8-Hj-NWA" secondAttribute="centerY" id="zQc-uz-QhQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="ABOUT" id="r4S-Xs-gM0">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Zb3-iP-Bmo" detailTextLabel="WMs-Gc-fNx" style="IBUITableViewCellStyleValue1" id="LaZ-8H-8JW">
@@ -280,6 +316,7 @@
                     <connections>
                         <outlet property="addressTextField" destination="Eee-OO-0iU" id="203-Ct-qbi"/>
                         <outlet property="buildTextField" destination="zuk-cv-MlQ" id="wCV-fA-M5d"/>
+                        <outlet property="iBeaconUISwitch" destination="7N8-Hj-NWA" id="i5Y-AO-sQC"/>
                         <outlet property="portTextField" destination="j7F-Ps-y9y" id="R34-VN-yn6"/>
                         <outlet property="tokenTextField" destination="O10-AM-vfj" id="b9a-Xt-hEa"/>
                         <outlet property="versionTextField" destination="WMs-Gc-fNx" id="1pZ-XN-OI0"/>

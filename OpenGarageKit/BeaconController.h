@@ -23,5 +23,6 @@
 
 - (void)startMonitoringForBeacons;
 - (void)stopMonitoringForBeacons;
+- (BOOL)isMonitoring;
 
 @end

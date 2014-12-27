@@ -40,6 +40,23 @@
     [self.garageKey saveKey];
 }
 
+- (BOOL)garageKeyIsValid
+{
+    if ([self.garageKey.serverAddress length] < 1) {
+        return NO;
+    }
+    
+    if ([self.garageKey.serverPort integerValue] < 1) {
+        return NO;
+    }
+    
+    if ([self.garageKey.serverToken length] < 1) {
+        return NO;
+    }
+    
+    return YES;
+}
+
 - (void)apiCall:(NSString*)call WithResultBlock:(void (^)(BOOL success))resultBlock
 {
     if ([self.garageKey isValid]) {

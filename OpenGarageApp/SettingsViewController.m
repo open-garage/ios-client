@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *tokenTextField;
 @property (weak, nonatomic) IBOutlet UILabel *versionTextField;
 @property (weak, nonatomic) IBOutlet UILabel *buildTextField;
+@property (weak, nonatomic) IBOutlet UISwitch *iBeaconUISwitch;
 
 @end
 
@@ -35,11 +36,29 @@
     
     _versionTextField.text = [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"];
     _buildTextField.text = [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"];
+    
+    [self loadBeaconStatus];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+-(void)saveBeaconStatus
+{
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
+    
+    [defaults setBool:_iBeaconUISwitch.on forKey:kBeacon];
+    
+    [defaults synchronize];
+}
+
+- (void)loadBeaconStatus
+{
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
+    
+    [_iBeaconUISwitch setOn:[defaults boolForKey:kBeacon]];
 }
 
 - (GarageKey *)garageKey
@@ -59,6 +78,8 @@
     self.garageKey.serverPort = [NSNumber numberWithInteger:[_portTextField.text integerValue]];
     self.garageKey.serverToken = _tokenTextField.text;
     
+    [self saveBeaconStatus];
+    
     if ([self.garageKey isValid]) {
         [_delegate settingsViewControllerDidFinish:self withGarageKey:self.garageKey];
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -70,11 +91,19 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)websiteButtonPushed:(id)sender {
+- (IBAction)websiteButtonPushed:(id)sender
+{
     
     UIButton *button = (UIButton *) sender;
     
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:button.titleLabel.text]];
+}
+
+- (IBAction)iBeaconUISwitchPushed:(id)sender
+{
+    UISwitch *uiswitch = sender;
+    
+    [_delegate settingsViewController:self changedBeaconStatusTo:uiswitch.on];
 }
 
 @end

@@ -12,6 +12,7 @@
 		CD7296B61A4F5D15008D4CAE /* BeaconController.h in Headers */ = {isa = PBXBuildFile; fileRef = CDFD42411A4F00E900AC4F82 /* BeaconController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD7296B71A4F5D1C008D4CAE /* BeaconController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFD42421A4F00E900AC4F82 /* BeaconController.m */; };
 		CD7296B81A4F5EAA008D4CAE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD42451A4F020A00AC4F82 /* CoreLocation.framework */; };
+		CD7296BA1A4F6DF0008D4CAE /* OpenGarageConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = CD7296B91A4F6DA8008D4CAE /* OpenGarageConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD8EA26A1A37931C0024D859 /* GarageKey.h in Headers */ = {isa = PBXBuildFile; fileRef = CD8EA2681A37931C0024D859 /* GarageKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD8EA26B1A37931C0024D859 /* GarageKey.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8EA2691A37931C0024D859 /* GarageKey.m */; };
 		CDA20AD31A29E433000D2CBB /* OpenGarageKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA20AD21A29E433000D2CBB /* OpenGarageKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -79,6 +80,7 @@
 		209E0645CB3F63D15DF93CF5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		2F2005044E9F363AFCCD7291 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE789273F94E7B2696838F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CD7296B91A4F6DA8008D4CAE /* OpenGarageConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OpenGarageConstants.h; path = ../OpenGarageApp/OpenGarageConstants.h; sourceTree = "<group>"; };
 		CD8EA2681A37931C0024D859 /* GarageKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GarageKey.h; sourceTree = "<group>"; };
 		CD8EA2691A37931C0024D859 /* GarageKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GarageKey.m; sourceTree = "<group>"; };
 		CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenGarageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +187,7 @@
 		CDA20ACF1A29E433000D2CBB /* OpenGarageKit */ = {
 			isa = PBXGroup;
 			children = (
+				CD7296B91A4F6DA8008D4CAE /* OpenGarageConstants.h */,
 				CDFD42411A4F00E900AC4F82 /* BeaconController.h */,
 				CDFD42421A4F00E900AC4F82 /* BeaconController.m */,
 				CD8EA2681A37931C0024D859 /* GarageKey.h */,
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD7296B61A4F5D15008D4CAE /* BeaconController.h in Headers */,
+				CD7296BA1A4F6DF0008D4CAE /* OpenGarageConstants.h in Headers */,
 				CDA20AD31A29E433000D2CBB /* OpenGarageKit.h in Headers */,
 				CD8EA26A1A37931C0024D859 /* GarageKey.h in Headers */,
 				CDFD424A1A4F502200AC4F82 /* GarageController.h in Headers */,

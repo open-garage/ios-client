@@ -7,10 +7,7 @@
 //
 
 #import "GarageKey.h"
-
-#define kToken @"serverToken"
-#define kServerAddress @"serverAddress"
-#define kServerPort @"serverPort"
+#import "OpenGarageConstants.h"
 
 @implementation GarageKey
 
