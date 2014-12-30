@@ -39,6 +39,29 @@
     // If an error is encountered, use NCUpdateResultFailed
     // If there's no update required, use NCUpdateResultNoData
     // If there's an update, use NCUpdateResultNewData
+    
+    _infoLabel.text = @"Refreshing...";
+    
+    [self.garageController statusWithResultBlock:^(BOOL success, GarageDoorStatus status) {
+        if (success) {
+            switch (status) {
+                case GarageDoorStatusClosed:
+                    _infoLabel.text = @"Closed";
+                    break;
+                case GarageDoorStatusOpen:
+                    _infoLabel.text = @"Open";
+                    break;
+                default:
+                    _infoLabel.text = @"Unknown";
+                    break;
+            }
+            
+            completionHandler(NCUpdateResultNewData);
+            
+        } else {
+            completionHandler(NCUpdateResultFailed);
+        }
+    }];
 
     completionHandler(NCUpdateResultNewData);
 }
