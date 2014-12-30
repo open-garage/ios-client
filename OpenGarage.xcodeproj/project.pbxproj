@@ -15,6 +15,7 @@
 		CD7296BA1A4F6DF0008D4CAE /* OpenGarageConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = CD7296B91A4F6DA8008D4CAE /* OpenGarageConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD8EA26A1A37931C0024D859 /* GarageKey.h in Headers */ = {isa = PBXBuildFile; fileRef = CD8EA2681A37931C0024D859 /* GarageKey.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD8EA26B1A37931C0024D859 /* GarageKey.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8EA2691A37931C0024D859 /* GarageKey.m */; };
+		CD8EB8081A52BDF100300348 /* GarageDoorView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD8EB8071A52BDF100300348 /* GarageDoorView.m */; };
 		CDA20AD31A29E433000D2CBB /* OpenGarageKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CDA20AD21A29E433000D2CBB /* OpenGarageKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CDA20AEC1A29E4BA000D2CBB /* GarageController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA20AEA1A29E4BA000D2CBB /* GarageController.m */; };
 		CDA20AEE1A29E627000D2CBB /* server.cer in Resources */ = {isa = PBXBuildFile; fileRef = CDA20AED1A29E627000D2CBB /* server.cer */; };
@@ -83,6 +84,8 @@
 		CD7296B91A4F6DA8008D4CAE /* OpenGarageConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OpenGarageConstants.h; path = ../OpenGarageApp/OpenGarageConstants.h; sourceTree = "<group>"; };
 		CD8EA2681A37931C0024D859 /* GarageKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GarageKey.h; sourceTree = "<group>"; };
 		CD8EA2691A37931C0024D859 /* GarageKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GarageKey.m; sourceTree = "<group>"; };
+		CD8EB8061A52BDF100300348 /* GarageDoorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GarageDoorView.h; sourceTree = "<group>"; };
+		CD8EB8071A52BDF100300348 /* GarageDoorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GarageDoorView.m; sourceTree = "<group>"; };
 		CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenGarageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA20AD11A29E433000D2CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDA20AD21A29E433000D2CBB /* OpenGarageKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGarageKit.h; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 				CDA20AFD1A29E663000D2CBB /* ViewController.m */,
 				CDE34F971A2A319500FE017A /* SettingsViewController.h */,
 				CDE34F981A2A319500FE017A /* SettingsViewController.m */,
+				CD8EB8061A52BDF100300348 /* GarageDoorView.h */,
+				CD8EB8071A52BDF100300348 /* GarageDoorView.m */,
 				CDA20AFF1A29E663000D2CBB /* Main.storyboard */,
 				CDA20B041A29E663000D2CBB /* LaunchScreen.xib */,
 				CDA20B021A29E663000D2CBB /* Images.xcassets */,
@@ -482,6 +487,7 @@
 			files = (
 				CDA20AFE1A29E663000D2CBB /* ViewController.m in Sources */,
 				CDA20AFB1A29E663000D2CBB /* AppDelegate.m in Sources */,
+				CD8EB8081A52BDF100300348 /* GarageDoorView.m in Sources */,
 				CDA20AF81A29E663000D2CBB /* main.m in Sources */,
 				CDE34F991A2A319500FE017A /* SettingsViewController.m in Sources */,
 			);

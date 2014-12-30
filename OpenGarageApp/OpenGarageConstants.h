@@ -9,6 +9,9 @@
 #ifndef OpenGarage_OpenGarageConstants_h
 #define OpenGarage_OpenGarageConstants_h
 
+// enable / disable debugging mode
+#define DEBUGGING_MODE YES
+
 // Settings Keys
 #define kToken @"serverToken"
 #define kServerAddress @"serverAddress"

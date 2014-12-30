@@ -9,16 +9,15 @@
 #import <OpenGarageKit/OpenGarageKit.h>
 #import "ViewController.h"
 #import "SettingsViewController.h"
+#import "GarageDoorView.h"
 
 @interface ViewController () <SettingsViewControllerDelegate, GarageControllerDelegate, BeaconControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIButton *toggleButton;
-@property (weak, nonatomic) IBOutlet UIView *garageDoorView;
+@property (weak, nonatomic) IBOutlet UIButton *refreshButton;
+@property (weak, nonatomic) IBOutlet GarageDoorView *garageDoorView;
 
 @property (nonatomic) GarageController *garageController;
 @property (nonatomic) BeaconController *beaconController;
-
-@property BOOL closeDoor;
 
 @end
 
@@ -29,17 +28,30 @@
     [super viewDidLoad];
     
     if (DEBUGGING_MODE == YES) {
-        [_toggleButton setTitle:@"Toggle (Debug)" forState:UIControlStateNormal];
+        [_refreshButton setTitle:@"Refresh (Debug)" forState:UIControlStateNormal];
     }
     
     if ([self loadBeaconStatus]) {
         [self.beaconController startMonitoringForBeacons];
     }
+    
+    // add gesture recognizer the the garage door view
+    UITapGestureRecognizer *tapGarageDoor = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(garageDoorViewPushed:)];
+    [_garageDoorView setUserInteractionEnabled:YES];
+    [_garageDoorView addGestureRecognizer:tapGarageDoor];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [self.garageController startMonitoringServer];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    [self.garageController statusWithResultBlock:^(BOOL success, GarageDoorStatus status) {
+        if (success) {
+            [self setupUIWithGarageDoorStatus:status];
+        }
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    }];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -77,6 +89,21 @@
     return _beaconController;
 }
 
+- (void)setupUIWithGarageDoorStatus:(GarageDoorStatus)doorStatus
+{
+    switch (doorStatus) {
+        case GarageDoorStatusClosed:
+            [_garageDoorView closeDoor];
+            break;
+        case GarageDoorStatusOpen:
+            [_garageDoorView openDoor];
+            break;
+        default:
+            [_garageDoorView setStatusLabelText:@"ERROR"];
+            break;
+    }
+}
+
 - (BOOL)loadBeaconStatus
 {
     NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
@@ -84,16 +111,31 @@
     return [defaults boolForKey:kBeacon];
 }
 
-- (IBAction)toggleButtonPushed:(id)sender
+- (IBAction)refreshButtonPushed:(id)sender
 {
     if ([self.garageController garageKeyIsValid]) {
-        _toggleButton.enabled = NO;
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         
-        [self addSystemSpringAnimationToView:_garageDoorView andOpenDoor:_closeDoor];
+        [self.garageController statusWithResultBlock:^(BOOL success, GarageDoorStatus status) {
+            if (success) {
+                [self setupUIWithGarageDoorStatus:status];
+            }
+            
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        }];
+    } else {
+        [self performSegueWithIdentifier:@"showSettings" sender:self];
+    }
+}
+
+- (void)garageDoorViewPushed:(id)sender
+{
+    if ([self.garageController garageKeyIsValid]) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         
         [self.garageController toggleWithResultBlock:^(BOOL success) {
             if (success) {
-                //alert.message = NSLocalizedString(@"Successfully toggled garage door", @"Garage door successfully opened dialog");
+                [_garageDoorView toggleDoor];
             } else {
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Garage Door", @"Garage Door Open Dialog")
                                                                                message:@""
@@ -106,7 +148,8 @@
                 alert.message = NSLocalizedString(@"Error while toggling garage door", @"Error while toggling garage door dialog");
                 [self presentViewController:alert animated:YES completion:nil];
             }
-            //_toggleButton.enabled = YES;
+            
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         }];
     } else {
         [self performSegueWithIdentifier:@"showSettings" sender:self];
@@ -145,9 +188,11 @@
 - (void)openGarageServerReachabilityChanged:(BOOL)reachable
 {
     if (reachable) {
-        _toggleButton.enabled = YES;
+        _refreshButton.enabled = YES;
+        _garageDoorView.userInteractionEnabled = YES;
     } else {
-        _toggleButton.enabled = NO;
+        _refreshButton.enabled = NO;
+        _garageDoorView.userInteractionEnabled = NO;
     }
 }
 
@@ -155,44 +200,15 @@
 
 - (void)beaconController:(BeaconController *)controller foundBeaconWithUUID:(NSUUID *)uuid withMajor:(NSNumber *)major andWithMinor:(NSNumber *)minor
 {
-    NSLog(@"INFO: Found Open-Garage iBeacon");
-}
-
-#pragma mark - Animation methods
-
-- (void) addSystemSpringAnimationToView:(UIView *)view andOpenDoor:(BOOL)open
-{
-    [UIView animateWithDuration:1.0
-                          delay:0.0
-         usingSpringWithDamping:0.6
-          initialSpringVelocity:0.0
-                        options:UIViewAnimationOptionBeginFromCurrentState
-                     animations:^{
-                         CGFloat amount = 60;
-                         
-                         if (open) {
-                             if (view.frame.origin.x == 50) {
-                                 view.frame = CGRectOffset(view.frame, 0, amount);
-                             } else {
-                                 view.frame = CGRectOffset(view.frame, 0, -amount);
-                             }
-                         } else {
-                             if (view.frame.origin.x == 50) {
-                                 view.frame = CGRectOffset(view.frame, 0, -amount);
-                             } else {
-                                 view.frame = CGRectOffset(view.frame, 0, amount);
-                             }
-                         }
-                         
-                     } completion:^(BOOL finished) {
-                         if (_closeDoor) {
-                             _closeDoor = NO;
-                         } else {
-                             _closeDoor = YES;
-                         }
-                         
-                         _toggleButton.enabled = YES;
-                     }];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    [self.garageController statusWithResultBlock:^(BOOL success, GarageDoorStatus status) {
+        if (success) {
+            [self setupUIWithGarageDoorStatus:status];
+        }
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    }];
 }
 
 @end

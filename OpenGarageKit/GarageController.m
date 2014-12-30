@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Patrick Steiner. All rights reserved.
 //
 
-#import "GarageController.h"
 #import <AFNetworking.h>
+#import "GarageController.h"
 
 /**
  iOS Certificate Pinnig:
@@ -57,7 +57,7 @@
     return YES;
 }
 
-- (void)apiCall:(NSString*)call WithResultBlock:(void (^)(BOOL success))resultBlock
+- (void)apiCall:(NSString*)call WithResultBlock:(void (^)(BOOL success, id responseObject))resultBlock
 {
     if ([self.garageKey isValid]) {
         AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
@@ -89,21 +89,15 @@
         NSURLSessionDataTask *dataTask = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
             if (error) {
                 NSLog(@"ERROR: %@", error);
-                resultBlock(false);
+                resultBlock(false, responseObject);
             } else {
                 NSHTTPURLResponse *resp = (NSHTTPURLResponse*)response;
                 
                 if (resp.statusCode == 200) {
-                    NSString *errorString = [responseObject[@"status"] stringValue];
-                    if ([errorString isEqualToString:@"0"]) {
-                        resultBlock(true);
-                    } else {
-                        NSLog(@"Status code: %@", errorString);
-                        resultBlock(false);
-                    }
+                    resultBlock(true, responseObject);
                 } else {
                     NSLog(@"ERROR: %@ %@", response, responseObject);
-                    resultBlock(false);
+                    resultBlock(false, responseObject);
                 }
             }
         }];
@@ -111,21 +105,29 @@
         [dataTask resume];
     } else {
         NSLog(@"ERROR: Garage key is no valid.");
-        resultBlock(false);
+        resultBlock(false, nil);
     }
 }
 
 - (void)toggleWithResultBlock:(void (^)(BOOL success))resultBlock
 {
-    [self apiCall:@"toggle" WithResultBlock:^(BOOL success) {
+    [self apiCall:@"toggle" WithResultBlock:^(BOOL success, NSData *responseObject) {
         resultBlock(success);
     }];
 }
 
-- (void)statusWithResultBlock:(void (^)(BOOL success))resultBlock
+- (void)statusWithResultBlock:(void (^)(BOOL success, GarageDoorStatus status))resultBlock
 {
-    [self apiCall:@"status" WithResultBlock:^(BOOL success) {
-        resultBlock(success);
+    [self apiCall:@"status" WithResultBlock:^(BOOL success, NSDictionary *responseObject) {
+        if (success) {
+            _garageDoorStatus = [responseObject[@"status"] integerValue];
+            
+            resultBlock(success, _garageDoorStatus);
+        } else {
+            _garageDoorStatus = GarageDoorStatusError;
+            
+            resultBlock(success, _garageDoorStatus);
+        }
     }];
 }
 
