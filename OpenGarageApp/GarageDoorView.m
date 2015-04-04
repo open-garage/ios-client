@@ -104,7 +104,7 @@
     [self addDoorAnimationToView:_garageDoor andGarageDoorStatus:_garageDoorStatus];
 }
 
-- (void) addDoorAnimationToView:(UIView *)view andGarageDoorStatus:(GarageDoorStatus)status
+- (void)addDoorAnimationToView:(UIView *)view andGarageDoorStatus:(GarageDoorStatus)status
 {
     /*
      [UIView animateWithDuration:1.0
