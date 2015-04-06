@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Patrick Steiner. All rights reserved.
 //
 
-#import <OpenGarageKit/OpenGarageKit.h>
 #import "ViewController.h"
 #import "SettingsViewController.h"
 #import "GarageDoorView.h"

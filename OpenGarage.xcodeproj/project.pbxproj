@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		8291E4FB06626541911A249B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2005044E9F363AFCCD7291 /* libPods.a */; };
 		CD05F0BB1A3097CC001E8C97 /* OpenGarageKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD305BAC1AD11E6D00FAAD1A /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD305BAA1AD11E5800FAAD1A /* HomeKit.framework */; };
+		CD305BB31AD1A64600FAAD1A /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD305BAA1AD11E5800FAAD1A /* HomeKit.framework */; };
+		CD305BB51AD2537B00FAAD1A /* HomeKitManager.h in Headers */ = {isa = PBXBuildFile; fileRef = CD305BA71AD03C0F00FAAD1A /* HomeKitManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD305BB61AD2538400FAAD1A /* HomeKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CD305BA81AD03C0F00FAAD1A /* HomeKitManager.m */; };
+		CD305BB91AD2678500FAAD1A /* AccessoryBrowserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD305BB81AD2678500FAAD1A /* AccessoryBrowserTableViewController.m */; };
+		CD305BBC1AD272FC00FAAD1A /* ManageHomeKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD305BBB1AD272FC00FAAD1A /* ManageHomeKitViewController.m */; };
 		CD7296B61A4F5D15008D4CAE /* BeaconController.h in Headers */ = {isa = PBXBuildFile; fileRef = CDFD42411A4F00E900AC4F82 /* BeaconController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD7296B71A4F5D1C008D4CAE /* BeaconController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFD42421A4F00E900AC4F82 /* BeaconController.m */; };
 		CD7296B81A4F5EAA008D4CAE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFD42451A4F020A00AC4F82 /* CoreLocation.framework */; };
@@ -81,6 +87,13 @@
 		209E0645CB3F63D15DF93CF5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		2F2005044E9F363AFCCD7291 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE789273F94E7B2696838F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CD305BA71AD03C0F00FAAD1A /* HomeKitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeKitManager.h; path = ../OpenGarageApp/HomeKitManager.h; sourceTree = "<group>"; };
+		CD305BA81AD03C0F00FAAD1A /* HomeKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeKitManager.m; path = ../OpenGarageApp/HomeKitManager.m; sourceTree = "<group>"; };
+		CD305BAA1AD11E5800FAAD1A /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
+		CD305BB71AD2678500FAAD1A /* AccessoryBrowserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccessoryBrowserTableViewController.h; sourceTree = "<group>"; };
+		CD305BB81AD2678500FAAD1A /* AccessoryBrowserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessoryBrowserTableViewController.m; sourceTree = "<group>"; };
+		CD305BBA1AD272FC00FAAD1A /* ManageHomeKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManageHomeKitViewController.h; sourceTree = "<group>"; };
+		CD305BBB1AD272FC00FAAD1A /* ManageHomeKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManageHomeKitViewController.m; sourceTree = "<group>"; };
 		CD7296B91A4F6DA8008D4CAE /* OpenGarageConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OpenGarageConstants.h; path = ../OpenGarageApp/OpenGarageConstants.h; sourceTree = "<group>"; };
 		CD8EA2681A37931C0024D859 /* GarageKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GarageKey.h; sourceTree = "<group>"; };
 		CD8EA2691A37931C0024D859 /* GarageKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GarageKey.m; sourceTree = "<group>"; };
@@ -122,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD305BAC1AD11E6D00FAAD1A /* HomeKit.framework in Frameworks */,
 				CD7296B81A4F5EAA008D4CAE /* CoreLocation.framework in Frameworks */,
 				8291E4FB06626541911A249B /* libPods.a in Frameworks */,
 			);
@@ -131,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD305BB31AD1A64600FAAD1A /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +164,7 @@
 		23CCBF0686713481C1817F3C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD305BAA1AD11E5800FAAD1A /* HomeKit.framework */,
 				CDFD42451A4F020A00AC4F82 /* CoreLocation.framework */,
 				2F2005044E9F363AFCCD7291 /* libPods.a */,
 				CDD13F461A29EBE600767BE7 /* NotificationCenter.framework */,
@@ -198,6 +214,8 @@
 				CDA20AE91A29E4BA000D2CBB /* GarageController.h */,
 				CDA20AEA1A29E4BA000D2CBB /* GarageController.m */,
 				CDA20AD21A29E433000D2CBB /* OpenGarageKit.h */,
+				CD305BA71AD03C0F00FAAD1A /* HomeKitManager.h */,
+				CD305BA81AD03C0F00FAAD1A /* HomeKitManager.m */,
 				CDA20AD01A29E433000D2CBB /* Supporting Files */,
 			);
 			path = OpenGarageKit;
@@ -216,6 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				CDD13F581A29EFC500767BE7 /* OpenGarageApp.entitlements */,
+				CD305BB71AD2678500FAAD1A /* AccessoryBrowserTableViewController.h */,
+				CD305BB81AD2678500FAAD1A /* AccessoryBrowserTableViewController.m */,
 				CDA20AF91A29E663000D2CBB /* AppDelegate.h */,
 				CDA20AFA1A29E663000D2CBB /* AppDelegate.m */,
 				CDA20AFC1A29E663000D2CBB /* ViewController.h */,
@@ -224,6 +244,8 @@
 				CDE34F981A2A319500FE017A /* SettingsViewController.m */,
 				CD8EB8061A52BDF100300348 /* GarageDoorView.h */,
 				CD8EB8071A52BDF100300348 /* GarageDoorView.m */,
+				CD305BBA1AD272FC00FAAD1A /* ManageHomeKitViewController.h */,
+				CD305BBB1AD272FC00FAAD1A /* ManageHomeKitViewController.m */,
 				CDA20AFF1A29E663000D2CBB /* Main.storyboard */,
 				CDA20B041A29E663000D2CBB /* LaunchScreen.xib */,
 				CDA20B021A29E663000D2CBB /* Images.xcassets */,
@@ -270,6 +292,7 @@
 			files = (
 				CD7296B61A4F5D15008D4CAE /* BeaconController.h in Headers */,
 				CD7296BA1A4F6DF0008D4CAE /* OpenGarageConstants.h in Headers */,
+				CD305BB51AD2537B00FAAD1A /* HomeKitManager.h in Headers */,
 				CDA20AD31A29E433000D2CBB /* OpenGarageKit.h in Headers */,
 				CD8EA26A1A37931C0024D859 /* GarageKey.h in Headers */,
 				CDFD424A1A4F502200AC4F82 /* GarageController.h in Headers */,
@@ -359,6 +382,9 @@
 								enabled = 1;
 							};
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.HomeKit = {
 								enabled = 1;
 							};
 						};
@@ -478,6 +504,7 @@
 				CD8EA26B1A37931C0024D859 /* GarageKey.m in Sources */,
 				CDA20AEC1A29E4BA000D2CBB /* GarageController.m in Sources */,
 				CD7296B71A4F5D1C008D4CAE /* BeaconController.m in Sources */,
+				CD305BB61AD2538400FAAD1A /* HomeKitManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,10 +513,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDA20AFE1A29E663000D2CBB /* ViewController.m in Sources */,
+				CD305BBC1AD272FC00FAAD1A /* ManageHomeKitViewController.m in Sources */,
 				CDA20AFB1A29E663000D2CBB /* AppDelegate.m in Sources */,
 				CD8EB8081A52BDF100300348 /* GarageDoorView.m in Sources */,
 				CDA20AF81A29E663000D2CBB /* main.m in Sources */,
 				CDE34F991A2A319500FE017A /* SettingsViewController.m in Sources */,
+				CD305BB91AD2678500FAAD1A /* AccessoryBrowserTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +702,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = OpenGarageApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -687,6 +717,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = OpenGarageApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

@@ -20,5 +20,6 @@ FOUNDATION_EXPORT const unsigned char OpenGarageKitVersionString[];
 #import <OpenGarageKit/GarageKey.h>
 #import <OpenGarageKit/BeaconController.h>
 #import <OpenGarageKit/OpenGarageConstants.h>
+#import <OpenGarageKit/HomeKitManager.h>
 
 
