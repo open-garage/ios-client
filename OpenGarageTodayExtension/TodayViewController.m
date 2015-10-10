@@ -29,10 +29,6 @@
     //self.preferredContentSize = CGSizeMake(0, 88);
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
     // Perform any setup necessary in order to update the view.
     
@@ -50,6 +46,9 @@
                     break;
                 case GarageDoorStatusOpen:
                     _infoLabel.text = @"Open";
+                    break;
+                case GarageDoorStatusError:
+                    _infoLabel.text = @"Error";
                     break;
                 default:
                     _infoLabel.text = @"Unknown";
@@ -79,9 +78,9 @@
 - (IBAction)toggleButtonPushed:(id)sender {
     [self.garageController toggleWithResultBlock:^(BOOL success) {
         if (success) {
-            _infoLabel.text = @"OK :)";
+            _infoLabel.text = @"OK";
         } else {
-            _infoLabel.text = @"ERROR :(";
+            _infoLabel.text = @"ERROR";
         }
     }];
 }
