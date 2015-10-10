@@ -55,7 +55,7 @@
     
     // status label
     _statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, 25)];
-    [_statusLabel setText:@"Status: Closed"];
+    [self setDoorStatus:GarageDoorStatusUnknown];
     _statusLabel.textAlignment = NSTextAlignmentCenter;
     _statusLabel.textColor = [UIColor whiteColor];
     [self addSubview:_statusLabel];
@@ -96,6 +96,9 @@
         case GarageDoorStatusClosed:
             [self setStatusLabelText:@"Closed"];
             break;
+        case GarageDoorStatusError:
+            [self setStatusLabelText:@"Error"];
+            break;
         default:
             [self setStatusLabelText:@"Unknown"];
             break;
@@ -106,33 +109,6 @@
 
 - (void)addDoorAnimationToView:(UIView *)view andGarageDoorStatus:(GarageDoorStatus)status
 {
-    /*
-     [UIView animateWithDuration:1.0
-     delay:0.0
-     usingSpringWithDamping:0.6
-     initialSpringVelocity:0.0
-     options:UIViewAnimationOptionBeginFromCurrentState
-     animations:^{
-     CGFloat amount = 60;
-     
-     if (status == GarageDoorStatusClosed) {
-     if (view.frame.origin.x == 50) {
-     view.frame = CGRectOffset(view.frame, 0, amount);
-     } else {
-     view.frame = CGRectOffset(view.frame, 0, -amount);
-     }
-     } else {
-     if (view.frame.origin.x == 50) {
-     view.frame = CGRectOffset(view.frame, 0, -amount);
-     } else {
-     view.frame = CGRectOffset(view.frame, 0, amount);
-     }
-     }
-     } completion:^(BOOL finished) {
-     //
-     }];
-     */
-    
     [UIView animateWithDuration:1.0
                           delay:0.0
          usingSpringWithDamping:0.6
@@ -147,15 +123,5 @@
                      } completion:^(BOOL finished) {
                      }];
 }
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
- */
-
 
 @end

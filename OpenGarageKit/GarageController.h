@@ -12,7 +12,8 @@
 typedef NS_ENUM(NSInteger, GarageDoorStatus) {
     GarageDoorStatusError = -1,
     GarageDoorStatusClosed = 0,
-    GarageDoorStatusOpen = 1
+    GarageDoorStatusOpen = 1,
+    GarageDoorStatusUnknown = 2
 };
 
 @class GarageController;
