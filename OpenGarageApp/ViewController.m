@@ -59,11 +59,6 @@
     [self.garageController stopMonitoringServer];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
 - (GarageController *)garageController
 {
     if (_garageController == nil) {
