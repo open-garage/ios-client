@@ -90,7 +90,6 @@
 		CDA20AD21A29E433000D2CBB /* OpenGarageKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGarageKit.h; sourceTree = "<group>"; };
 		CDA20AE91A29E4BA000D2CBB /* GarageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GarageController.h; sourceTree = "<group>"; };
 		CDA20AEA1A29E4BA000D2CBB /* GarageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GarageController.m; sourceTree = "<group>"; };
-		CDA20AED1A29E627000D2CBB /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.cer; sourceTree = "<group>"; };
 		CDA20AF31A29E663000D2CBB /* OpenGarage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGarage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA20AF61A29E663000D2CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDA20AF71A29E663000D2CBB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -205,7 +204,6 @@
 		CDA20AD01A29E433000D2CBB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CDA20AED1A29E627000D2CBB /* server.cer */,
 				CDA20AD11A29E433000D2CBB /* Info.plist */,
 			);
 			name = "Supporting Files";

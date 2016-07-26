@@ -19,7 +19,7 @@
 
 @interface GarageController ()
 
-@property (nonatomic) AFHTTPRequestOperationManager *serverStatusManager;
+@property (nonatomic) AFHTTPSessionManager *serverStatusManager;
 
 @end
 
@@ -61,9 +61,6 @@
 {
     if ([self.garageKey isValid]) {
         AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-        
-        manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
-        manager.securityPolicy.allowInvalidCertificates = YES;
         
         NSString *url = [NSString stringWithFormat:@"%@/api/v1/%@", [self.garageKey serverURL], call];
         
