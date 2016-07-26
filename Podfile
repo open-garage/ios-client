@@ -1,2 +1,6 @@
 platform :ios, '8.1'
-pod "AFNetworking", "~> 2.0"
+use_frameworks!
+
+target 'OpenGarageKit' do
+  pod "AFNetworking", "~> 3.0"
+end

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8291E4FB06626541911A249B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F2005044E9F363AFCCD7291 /* libPods.a */; };
+		98D132A308F5812026507DA5 /* Pods_OpenGarageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CAFAA8E2C1E4A3CF92D6A11 /* Pods_OpenGarageKit.framework */; };
 		CD05F0BB1A3097CC001E8C97 /* OpenGarageKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDA20ACD1A29E433000D2CBB /* OpenGarageKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD7296B61A4F5D15008D4CAE /* BeaconController.h in Headers */ = {isa = PBXBuildFile; fileRef = CDFD42411A4F00E900AC4F82 /* BeaconController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD7296B71A4F5D1C008D4CAE /* BeaconController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFD42421A4F00E900AC4F82 /* BeaconController.m */; };
@@ -78,9 +78,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		209E0645CB3F63D15DF93CF5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		2F2005044E9F363AFCCD7291 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CE789273F94E7B2696838F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4B1306C01CFBA014571DCACD /* Pods-OpenGarageKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenGarageKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenGarageKit/Pods-OpenGarageKit.debug.xcconfig"; sourceTree = "<group>"; };
+		4CAFAA8E2C1E4A3CF92D6A11 /* Pods_OpenGarageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenGarageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AE12020D31C8F4B2B353CA5 /* Pods-OpenGarageKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenGarageKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenGarageKit/Pods-OpenGarageKit.release.xcconfig"; sourceTree = "<group>"; };
 		CD7296B91A4F6DA8008D4CAE /* OpenGarageConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OpenGarageConstants.h; path = ../OpenGarageApp/OpenGarageConstants.h; sourceTree = "<group>"; };
 		CD8EA2681A37931C0024D859 /* GarageKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GarageKey.h; sourceTree = "<group>"; };
 		CD8EA2691A37931C0024D859 /* GarageKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GarageKey.m; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD7296B81A4F5EAA008D4CAE /* CoreLocation.framework in Frameworks */,
-				8291E4FB06626541911A249B /* libPods.a in Frameworks */,
+				98D132A308F5812026507DA5 /* Pods_OpenGarageKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,17 +150,17 @@
 			isa = PBXGroup;
 			children = (
 				CDFD42451A4F020A00AC4F82 /* CoreLocation.framework */,
-				2F2005044E9F363AFCCD7291 /* libPods.a */,
 				CDD13F461A29EBE600767BE7 /* NotificationCenter.framework */,
+				4CAFAA8E2C1E4A3CF92D6A11 /* Pods_OpenGarageKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B73DF3F954419E372C508B8C /* Pods */ = {
+		3B7892789C1BD21B8B7E4211 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4CE789273F94E7B2696838F0 /* Pods.debug.xcconfig */,
-				209E0645CB3F63D15DF93CF5 /* Pods.release.xcconfig */,
+				4B1306C01CFBA014571DCACD /* Pods-OpenGarageKit.debug.xcconfig */,
+				9AE12020D31C8F4B2B353CA5 /* Pods-OpenGarageKit.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -172,8 +172,8 @@
 				CDA20AF41A29E663000D2CBB /* OpenGarageApp */,
 				CDD13F481A29EBE600767BE7 /* OpenGarageTodayExtension */,
 				CDA20ACE1A29E433000D2CBB /* Products */,
-				B73DF3F954419E372C508B8C /* Pods */,
 				23CCBF0686713481C1817F3C /* Frameworks */,
+				3B7892789C1BD21B8B7E4211 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -283,12 +283,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDA20AE31A29E433000D2CBB /* Build configuration list for PBXNativeTarget "OpenGarageKit" */;
 			buildPhases = (
-				978150B6B67F39E43D644701 /* Check Pods Manifest.lock */,
+				F09F283BBC0B63393FEF5164 /* [CP] Check Pods Manifest.lock */,
 				CDA20AC81A29E433000D2CBB /* Sources */,
 				CDA20AC91A29E433000D2CBB /* Frameworks */,
 				CDA20ACA1A29E433000D2CBB /* Headers */,
 				CDA20ACB1A29E433000D2CBB /* Resources */,
-				4E069F1CFD5095803B7F8778 /* Copy Pods Resources */,
+				C0099507D86DF0682C51C71D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -425,34 +425,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4E069F1CFD5095803B7F8778 /* Copy Pods Resources */ = {
+		C0099507D86DF0682C51C71D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		978150B6B67F39E43D644701 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenGarageKit/Pods-OpenGarageKit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CD2868821A3CE19E00BC817D /* ShellScript */ = {
@@ -467,6 +452,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+		F09F283BBC0B63393FEF5164 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -623,7 +623,7 @@
 		};
 		CDA20AE41A29E433000D2CBB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CE789273F94E7B2696838F0 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 4B1306C01CFBA014571DCACD /* Pods-OpenGarageKit.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -645,7 +645,7 @@
 		};
 		CDA20AE51A29E433000D2CBB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 209E0645CB3F63D15DF93CF5 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 9AE12020D31C8F4B2B353CA5 /* Pods-OpenGarageKit.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
