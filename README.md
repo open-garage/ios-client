@@ -11,3 +11,4 @@ iOS Client for the Open Garage project.
 
 ## Todo:
 - Better UI / UX
+-  Watch support 
