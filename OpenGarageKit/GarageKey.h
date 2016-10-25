@@ -11,7 +11,7 @@
 @interface GarageKey : NSObject
 
 @property (nonatomic) NSString *serverToken;
-@property (nonatomic) NSString *serverAddress;
+@property (nonatomic) NSString *serverHostname;
 @property (nonatomic) NSNumber *serverPort;
 
 - (void)saveKey;

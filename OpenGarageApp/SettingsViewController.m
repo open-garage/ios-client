@@ -10,7 +10,7 @@
 
 @interface SettingsViewController()
 
-@property (weak, nonatomic) IBOutlet UITextField *addressTextField;
+@property (weak, nonatomic) IBOutlet UITextField *hostnameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *portTextField;
 @property (weak, nonatomic) IBOutlet UITextField *tokenTextField;
 @property (weak, nonatomic) IBOutlet UILabel *versionTextField;
@@ -29,7 +29,7 @@
     self.tableView.rowHeight = 44;
     
     if (self.garageKey && [self.garageKey isValid]) {
-        _addressTextField.text = self.garageKey.serverAddress;
+        _hostnameTextField.text = self.garageKey.serverHostname;
         _portTextField.text = [NSString stringWithFormat:@"%@", self.garageKey.serverPort];
         _tokenTextField.text = self.garageKey.serverToken;
     }
@@ -69,7 +69,7 @@
 
 - (IBAction)saveButtonPushed:(id)sender
 {
-    self.garageKey.serverAddress = _addressTextField.text;
+    self.garageKey.serverHostname = _hostnameTextField.text;
     self.garageKey.serverPort = [NSNumber numberWithInteger:[_portTextField.text integerValue]];
     self.garageKey.serverToken = _tokenTextField.text;
     

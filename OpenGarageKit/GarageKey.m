@@ -26,7 +26,7 @@
         NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
         
         [defaults setObject:_serverToken forKey:kToken];
-        [defaults setObject:_serverAddress forKey:kServerAddress];
+        [defaults setObject:_serverHostname forKey:kServerAddress];
         [defaults setObject:_serverPort forKey:kServerPort];
         
         [defaults synchronize];
@@ -38,7 +38,7 @@
     NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
     
     _serverToken = [defaults objectForKey:kToken];
-    _serverAddress = [defaults objectForKey:kServerAddress];
+    _serverHostname = [defaults objectForKey:kServerAddress];
     _serverPort = [defaults objectForKey:kServerPort];
 }
 
@@ -50,8 +50,8 @@
         return NO;
     }
     
-    if ([_serverAddress length] < 1) {
-        NSLog(@"ERROR: server address (%@) is invalid", _serverAddress);
+    if ([_serverHostname length] < 1) {
+        NSLog(@"ERROR: server address (%@) is invalid", _serverHostname);
         return NO;
     }
     
@@ -66,7 +66,7 @@
 - (NSString *)serverURL
 {
     if ([self isValid]) {
-        return [NSString stringWithFormat:@"https://%@:%li", _serverAddress, (long)[_serverPort integerValue]];
+        return [NSString stringWithFormat:@"https://%@:%li", _serverHostname, (long)[_serverPort integerValue]];
     }
     
     return nil;

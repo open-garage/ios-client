@@ -42,7 +42,7 @@
 
 - (BOOL)garageKeyIsValid
 {
-    if ([self.garageKey.serverAddress length] < 1) {
+    if ([self.garageKey.serverHostname length] < 1) {
         return NO;
     }
     
