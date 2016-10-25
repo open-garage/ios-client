@@ -14,7 +14,7 @@
 
 // Settings Keys
 #define kToken @"serverToken"
-#define kServerAddress @"serverAddress"
+#define kServerHostname @"serverHostname"
 #define kServerPort @"serverPort"
 
 #define kBeacon @"BeaconEnabled"

@@ -26,7 +26,7 @@
         NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
         
         [defaults setObject:_serverToken forKey:kToken];
-        [defaults setObject:_serverHostname forKey:kServerAddress];
+        [defaults setObject:_serverHostname forKey:kServerHostname];
         [defaults setObject:_serverPort forKey:kServerPort];
         
         [defaults synchronize];
@@ -38,7 +38,7 @@
     NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.at.helmsdeep.opengarage"];
     
     _serverToken = [defaults objectForKey:kToken];
-    _serverHostname = [defaults objectForKey:kServerAddress];
+    _serverHostname = [defaults objectForKey:kServerHostname];
     _serverPort = [defaults objectForKey:kServerPort];
 }
 
